@@ -2,18 +2,30 @@ import { ProfileCourseStatistic } from '..'
 import { ProfileCourseInfo } from '../profile-course-info'
 import cl from './ProfileCourse.module.scss'
 
-export const ProfileCourse = () => {
+export const ProfileCourse = ({
+	date,
+	percent,
+	title,
+	allLessons,
+	uploadedLessons
+}: {
+	date: string
+	percent: string
+	title: string
+	allLessons: string
+	uploadedLessons: string
+}) => {
 	return (
 		<div className={cl.root}>
 			<ProfileCourseInfo
-				date="Apr 19 2024"
-				percent="8"
-				title="Frontend"
+				date={date}
+				percent={percent}
+				title={title}
 			/>
 			<div className={cl.root__divide}></div>
 			<ProfileCourseStatistic
-				allLessons="18"
-				uploadedLessons="3"
+				allLessons={allLessons}
+				uploadedLessons={uploadedLessons}
 			/>
 		</div>
 	)
