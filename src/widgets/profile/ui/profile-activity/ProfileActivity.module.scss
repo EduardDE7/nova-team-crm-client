@@ -1,0 +1,79 @@
+.root {
+	padding: 25px 27px 26px 26px;
+	background-color: white;
+	border-radius: 15px;
+
+	&__bar {
+		width: 427px;
+		height: 397px;
+	}
+
+	&__activity_header {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 27px;
+	}
+
+	&__personal_bar {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__personal_activity {
+		display: flex;
+		flex-direction: column;
+		max-width: 500px;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		color: #1b0a29;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	&__activity_changes {
+		display: flex;
+		align-items: center;
+	}
+
+	&__activity_stat {
+		margin-right: 4px;
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	&__stat_increase {
+		color: #1fc6c6;
+	}
+
+	&__stat_decrease {
+		color: #E78175;
+	}
+
+	&__arrow_icon_increase {
+		color: #1fc6c6;
+		transform: rotate(-45deg);
+	}
+
+	&__arrow_icon_decrease {
+		transform: rotate(45deg);
+	}
+
+	&__personal_settings {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+
+	&text_of_changes {
+		color: #877d92;
+		font-size: 16px;
+	}
+}
