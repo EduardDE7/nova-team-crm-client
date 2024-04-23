@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { BrowserRouter } from 'react-router-dom'
+
 import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
@@ -56,8 +58,12 @@ export const IconSecondary: Story = {
 	}
 }
 export const Link: Story = {
-	args: {
-		iconName: 'More',
-		link: '#'
-	}
+	render: () => (
+		<BrowserRouter>
+			<Button
+				iconName="More"
+				link="#"
+			/>
+		</BrowserRouter>
+	)
 }
