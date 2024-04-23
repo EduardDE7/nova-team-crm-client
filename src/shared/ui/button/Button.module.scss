@@ -48,7 +48,7 @@
 		background-color: #ffff;
 
 		svg [fill] {
-			fill: #1fc6c6;
+			fill: var(--icon-color);
 		}
 	}
 

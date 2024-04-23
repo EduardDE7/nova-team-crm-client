@@ -11,10 +11,12 @@ import Computer from '@/shared/assets/icons/computer.svg?react'
 import Connected from '@/shared/assets/icons/connected-apps.svg?react'
 import Course from '@/shared/assets/icons/course-icon.svg?react'
 import Courses from '@/shared/assets/icons/courses.svg?react'
+import DarkMode from '@/shared/assets/icons/dark-mode.svg?react'
 import Dashboard from '@/shared/assets/icons/dashboard.svg?react'
 import Done from '@/shared/assets/icons/done.svg?react'
 import Edit from '@/shared/assets/icons/edit.svg?react'
 import InfoPortal from '@/shared/assets/icons/infoPortal.svg?react'
+import LightMode from '@/shared/assets/icons/light-mode.svg?react'
 import Logout from '@/shared/assets/icons/logout.svg?react'
 import Messenger from '@/shared/assets/icons/messenger.svg?react'
 import More from '@/shared/assets/icons/more.svg?react'
@@ -48,7 +50,9 @@ export const icons = {
 	Connected,
 	Payments,
 	More,
-	Close
+	Close,
+	DarkMode,
+	LightMode
 }
 
 export type IconName = keyof typeof icons

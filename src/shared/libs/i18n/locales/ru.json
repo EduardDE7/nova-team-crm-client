@@ -19,12 +19,9 @@
         "send_message_notifications": "Уведомление об отправке сообщений",
         "dont_send": "Не отправлять",
         "lessons_in_total": "Всего уроков",
-        "safety": "Безопасность",
         "notification": "Уведомление",
-        "connected-apps": "Связанные приложения",
         "lessons-in-total": "Всего уроков",
         "safety": "Безопасность",
-        "notification": "Уведомление",
         "connected-apps": "Связанные приложения",
         "payments": " Платежи",
         "gender": "Пол",
@@ -32,7 +29,8 @@
         "full_age": "Возраст",
         "position": "Должность",
         "notifications": "Уведомления",
-        "connected-apps": "Связанные приложения",
-        "payments": " Платежи"
+        "my_profile": "Мой профиль",
+        "my_schedule": "Мое расписание",
+        "settings": "Настройки"
     }
 }

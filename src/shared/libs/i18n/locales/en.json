@@ -27,7 +27,8 @@
         "full_age": "Full age",
         "position": "Position",
         "notifications": "Notifications",
-        "connected-apps": "Connected Apps",
-        "payments": "Payments"
+        "my_profile": "My Profile",
+        "my_schedule": "My Schedule",
+        "settings": "Settings"
     }
 }
