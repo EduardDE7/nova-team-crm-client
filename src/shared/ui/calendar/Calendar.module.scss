@@ -1,0 +1,13 @@
+.root {
+    &__arrow_left {
+        display: flex;
+        align-items: center;
+        transform: rotate(180deg);
+    }
+
+    &__arrow_right {
+        display: flex;
+        align-items: center;
+    }
+}
+

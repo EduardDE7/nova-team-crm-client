@@ -1,5 +1,6 @@
 {
     "translation": {
+        "test-translate": "Переведенный текст",
         "course-data": "Информация о курсе",
         "all-lessons": "Все уроки",
         "uploaded-lessons": "Загруженные уроки",
@@ -17,8 +18,10 @@
         "new_messages": "Новые сообщения",
         "send_message_notifications": "Уведомление об отправке сообщений",
         "dont_send": "Не отправлять",
-        "safety": "Безопасность",
+        "lessons_in_total": "Всего уроков",
         "notification": "Уведомление",
+        "lessons-in-total": "Всего уроков",
+        "safety": "Безопасность",
         "connected-apps": "Связанные приложения",
         "payments": " Платежи",
         "gender": "Пол",

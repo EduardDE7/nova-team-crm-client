@@ -12,7 +12,7 @@ const themeSlice = createSlice({
 	initialState,
 	name: 'theme',
 	reducers: {
-		changeThemeAction: (state, action: PayloadAction<TTheme>) => {
+		changeThemeAction: (state, action: PayloadAction<string>) => {
 			state.theme = action.payload
 		}
 	}
