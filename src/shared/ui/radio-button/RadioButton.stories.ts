@@ -1,23 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { RadioButton } from "./RadioButton";
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { RadioButton } from './RadioButton'
 
 const meta: Meta<typeof RadioButton> = {
-    title: "shared/RadioButton",
+    title: 'shared/RadioButton',
     component: RadioButton,
     parameters: {
-        layout: ["centered"]
+        layout: ['centered']
     },
     argTypes: {
         className: {
-            type: "string",
+            type: 'string',
             description: 'Styles variables for component'
         },
         checked: {
-            type: "boolean",
-            description: ""
+            type: 'boolean',
+            description: ''
         }
     },
-    tags: ["autodocs"]
+    tags: ['autodocs']
 }
 
 export default meta

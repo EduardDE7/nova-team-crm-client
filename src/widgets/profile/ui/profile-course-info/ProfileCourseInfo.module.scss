@@ -1,62 +1,62 @@
 .root {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	justify-content: space-between;
-	width: 427px;
-	padding: 36px 24px;
-	background-color: white;
-	border-radius: 24px 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+    width: 427px;
+    padding: 36px 24px;
+    background-color: white;
+    border-radius: 24px 0 0 24px;
 }
 
 .top {
-	display: flex;
-	gap: 15px;
-	align-items: center;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 46px;
-	height: 46px;
-	background-color: #2796ec;
-	border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background-color: #2796ec;
+    border-radius: 10px;
 
-	svg {
-		width: 20px;
-		height: 20px;
-	}
+    svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .bottom {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-	&__date {
-		display: flex;
-		align-items: center;
-		column-gap: 8px;
+    &__date {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
 
-		&__text {
-			font-weight: 600;
-			line-height: 16px;
-		}
-	}
+        &__text {
+            font-weight: 600;
+            line-height: 16px;
+        }
+    }
 }
 
 .percent {
-	display: flex;
-	gap: 13px;
-	align-items: center;
-	margin-top: -10px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    margin-top: -10px;
 }
 
 .number {
-	margin-top: 10px;
-	color: rgb(27 10 41);
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.5;
+    margin-top: 10px;
+    color: rgb(27 10 41);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
 }

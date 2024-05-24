@@ -3,5 +3,5 @@ import { AppProvider } from './providers/AppProvider'
 import './styles/index.scss'
 
 export const App = () => {
-	return <AppProvider />
+    return <AppProvider />
 }

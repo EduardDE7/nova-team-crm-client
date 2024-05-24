@@ -1,1 +1,1 @@
-export { ProfileCourseStatistic } from './ProfileCourseStatistic';
+export { ProfileCourseStatistic } from './ProfileCourseStatistic'

@@ -1,6 +1,6 @@
-import { FC } from "react"
+import { FC } from 'react'
 
 export type TRouteItem = {
-    Page: FC,
+    Page: FC
     path: string
 }

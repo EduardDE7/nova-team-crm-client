@@ -1,3 +1,3 @@
-import type { TRouteItem } from "./types"
+import type { TRouteItem } from './types'
 
 export const managerRoutes: TRouteItem[] = []

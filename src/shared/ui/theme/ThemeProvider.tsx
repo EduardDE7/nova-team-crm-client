@@ -7,18 +7,18 @@ import { changeThemeAction, useAppDispatch, useAppSelector } from '@/shared'
 import { getThemeFromCookie } from './utils'
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-	const { theme } = useAppSelector(store => store.theme)
+    const { theme } = useAppSelector(store => store.theme)
 
-	const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch()
 
-	useEffect(() => {
-		dispatch(changeThemeAction(getThemeFromCookie()))
-	}, []) // eslint-disable-line
+    useEffect(() => {
+        dispatch(changeThemeAction(getThemeFromCookie()))
+    }, []) // eslint-disable-line
 
-	useEffect(() => {
-		document.body.setAttribute('data-theme', theme)
-		cookie.set('theme', theme)
-	}, [theme])
+    useEffect(() => {
+        document.body.setAttribute('data-theme', theme)
+        cookie.set('theme', theme)
+    }, [theme])
 
-	return <>{children}</>
+    return <>{children}</>
 }

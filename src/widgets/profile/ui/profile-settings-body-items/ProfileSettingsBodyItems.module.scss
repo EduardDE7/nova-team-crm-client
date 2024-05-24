@@ -1,22 +1,22 @@
 .root {
-	display: flex;
-	flex-direction: column;
-	width: 560px;
-	height: 944px;
-	padding: 34px 25px;
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    height: 944px;
+    padding: 34px 25px;
 
-	&__title {
-		margin-bottom: 20px;
-		color: #1b0a29;
-		font-weight: bold;
-		font-size: 18px;
-		line-height: 26px;
-	}
+    &__title {
+        margin-bottom: 20px;
+        color: #1b0a29;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 26px;
+    }
 
-	&__notifications {
-		display: flex;
-		align-items: center;
-		margin-top: 12px;
-		column-gap: 14px;
-	}
+    &__notifications {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+        column-gap: 14px;
+    }
 }

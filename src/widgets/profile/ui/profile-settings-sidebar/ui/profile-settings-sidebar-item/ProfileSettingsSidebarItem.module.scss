@@ -1,41 +1,41 @@
 .root {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	column-gap: 16px;
-	background-color: transparent;
-	border-radius: 14px;
-	cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: 16px;
+    background-color: transparent;
+    border-radius: 14px;
+    cursor: pointer;
 
-	&_active::after {
-		position: absolute;
-		right: -10px;
-		width: 4px;
-		height: 52px;
-		background-color: #1fc6c6;
-		border-radius: 8px;
-		content: '';
-	}
+    &_active::after {
+        position: absolute;
+        right: -10px;
+        width: 4px;
+        height: 52px;
+        background-color: #1fc6c6;
+        border-radius: 8px;
+        content: '';
+    }
 
-	&_active {
-		background-color: #f9f4fd;
-	}
+    &_active {
+        background-color: #f9f4fd;
+    }
 
-	&__icon {
-		width: 24px;
-		height: 24px;
-		margin: 14px 0 14px 18px;
-		fill: rgb(125 133 146);
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin: 14px 0 14px 18px;
+        fill: rgb(125 133 146);
 
-		&_active {
-			fill: #1fc6c6;
-		}
-	}
+        &_active {
+            fill: #1fc6c6;
+        }
+    }
 
-	&__title {
-		color: rgb(136 125 146);
-		font-size: 16px;
-		line-height: 22px;
-	}
+    &__title {
+        color: rgb(136 125 146);
+        font-size: 16px;
+        line-height: 22px;
+    }
 }

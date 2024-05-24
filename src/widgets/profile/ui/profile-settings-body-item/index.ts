@@ -1,2 +1,1 @@
-export { ProfileSettingsBodyItem } from "./ProfileSettingsBodyItem";
-
+export { ProfileSettingsBodyItem } from './ProfileSettingsBodyItem'

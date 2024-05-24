@@ -1,18 +1,18 @@
 .root {
-	padding: 2px;
+    padding: 2px;
 
-	&__checkbox {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 20px;
-		height: 20px;
-		border: #1b0a29 solid 2px;
-		border-radius: 4px;
-		cursor: pointer;
-	}
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border: #1b0a29 solid 2px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-	&__icon {
-		padding-bottom: 3px;
-	}
+    &__icon {
+        padding-bottom: 3px;
+    }
 }

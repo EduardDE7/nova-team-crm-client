@@ -6,23 +6,23 @@ import cl from './CalendarTaskRadioButtonItem.module.scss'
 const { Text } = Typography
 
 export const CalendarTaskRadioButtonItem = ({
-	name,
-	checked,
-	onClick
+    name,
+    checked,
+    onClick
 }: {
-	name: TCalendarTasks
-	checked: boolean
-	onClick: () => void
+    name: TCalendarTasks
+    checked: boolean
+    onClick: () => void
 }) => {
-	return (
-		<div
-			onClick={onClick}
-			className={cl.root}>
-			<RadioButton checked={checked} />
-			<Text
-				text={name}
-				className={cl.root__text}
-			/>
-		</div>
-	)
+    return (
+        <div
+            onClick={onClick}
+            className={cl.root}>
+            <RadioButton checked={checked} />
+            <Text
+                text={name}
+                className={cl.root__text}
+            />
+        </div>
+    )
 }
