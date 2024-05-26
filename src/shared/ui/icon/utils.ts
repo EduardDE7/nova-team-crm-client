@@ -15,6 +15,7 @@ import DarkMode from '@/shared/assets/icons/dark-mode.svg?react'
 import Dashboard from '@/shared/assets/icons/dashboard.svg?react'
 import Done from '@/shared/assets/icons/done.svg?react'
 import Edit from '@/shared/assets/icons/edit.svg?react'
+import Eye from '@/shared/assets/icons/eye.svg?react'
 import InfoPortal from '@/shared/assets/icons/infoPortal.svg?react'
 import LightMode from '@/shared/assets/icons/light-mode.svg?react'
 import Logout from '@/shared/assets/icons/logout.svg?react'
@@ -28,31 +29,32 @@ import Settings from '@/shared/assets/icons/settings.svg?react'
 import Teachers from '@/shared/assets/icons/teachers.svg?react'
 
 export const icons = {
-    Settings,
-    Notification,
-    Add,
-    Edit,
-    Chevron,
-    Search,
-    Done,
-    Safety,
-    Course,
-    Computer,
-    Calendar,
-    CalendarGray,
-    Dashboard,
-    Courses,
-    Teachers,
-    Messenger,
-    InfoPortal,
-    Logout,
-    Arrow,
-    Connected,
-    Payments,
-    More,
-    Close,
-    DarkMode,
-    LightMode
+	Settings,
+	Notification,
+	Add,
+	Edit,
+	Chevron,
+	Search,
+	Done,
+	Safety,
+	Course,
+	Computer,
+	Calendar,
+	CalendarGray,
+	Dashboard,
+	Courses,
+	Teachers,
+	Messenger,
+	InfoPortal,
+	Logout,
+	Arrow,
+	Connected,
+	Payments,
+	More,
+	Close,
+	DarkMode,
+	LightMode,
+	Eye
 }
 
 export type IconName = keyof typeof icons

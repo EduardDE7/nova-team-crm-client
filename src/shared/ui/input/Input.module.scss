@@ -1,0 +1,105 @@
+.root {
+	&__label {
+		display: block;
+		margin-bottom: 7px;
+		color: #877d92;
+		font-weight: 700;
+		font-family: 'Nunito Sans', sans-serif;
+		line-height: 24px;
+
+		&_error {
+			color: #f00;
+		}
+	}
+
+	&__input__wrapper {
+		position: relative;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 12px 18px;
+		color: #877d92;
+		font-family: 'Nunito Sans', sans-serif;
+		line-height: 24px;
+		border: 1px solid #e8d8f0;
+		border-radius: 14px;
+		transition:
+			border-color 0.3s ease-in-out,
+			outline 0.3s ease-in-out;
+
+		&:focus {
+			border-color: var(--accent-color);
+			outline: none;
+		}
+
+		&:hover {
+			outline: 1px solid var(--accent-color);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		&_error {
+			border-color: #f00;
+		}
+
+		&::placeholder {
+			color: #877d92;
+			font-family: 'Nunito Sans', sans-serif;
+			line-height: 24px;
+		}
+	}
+
+	&__error {
+		color: #f00;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 24px;
+		padding-inline-start: 10px;
+	}
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		right: 18px;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		transform: translateY(-50%);
+		visibility: hidden;
+
+		& > svg [stroke] {
+			transition: stroke 0.3s ease-in-out;
+			stroke: #877d92;
+		}
+
+		&_active {
+			& > svg [stroke] {
+				stroke: var(--accent-color);
+			}
+		}
+
+		&:hover {
+			& > svg [stroke] {
+				stroke: var(--accent-light-color);
+			}
+		}
+	}
+
+	input:not(:placeholder-shown) + &__button {
+		visibility: visible;
+	}
+
+	input[type='password']::-ms-reveal,
+	input[type='password']::-ms-clear {
+		display: none;
+	}
+
+	input[type='password']::-webkit-input-speech-button,
+	input[type='password']::-webkit-credentials-auto-fill-button {
+		display: none;
+	}
+}

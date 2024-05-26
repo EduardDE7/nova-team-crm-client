@@ -1,62 +1,70 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { classNames } from '@/shared'
+import { Icon, classNames } from '@/shared'
 
-import cl from './index.module.scss'
+import cl from './Input.module.scss'
 
 export const Input = ({
     label,
     className,
     noTranslate,
-    variant,
     placeholder,
+    error,
+	type = 'text',
     ...props
 }: {
     label?: string
-    placeholder: string
     className?: string
-    noTranslate?: boolean
-    variant: 'profile-edit' | 'auth' | 'event' | 'description'
-    type?: 'text' | 'password' | 'tel' | 'date' | 'email'
-    required?: boolean
+	noTranslate?: boolean
+	placeholder: string
+	error?: string
+	type?: 'text' | 'password' | 'tel' | 'date' | 'email'
+	required?: boolean
+	disabled?: boolean
 }) => {
-    const { type, ...propsForTextArea } = props // eslint-disable-line
+    const [isPasswordShow, setIsPasswordShow] = useState(false)
 
     const { t } = useTranslation()
 
     const labelId = useId()
 
-    const inputClasses = classNames(
-        cl.root__input,
-        variant === 'description' ? cl.root__input_textarea : '',
-        className ?? ''
-    )
-
     return (
-        <div className={cl.root}>
-            {label && (
-                <label
-                    className={cl.root__label}
-                    htmlFor={labelId}>
-                    {noTranslate ? label : t(label)}
-                </label>
-            )}
-            {variant === 'description' ? (
-                <textarea
-                    id={labelId}
-                    className={inputClasses}
-                    {...propsForTextArea}
-                    placeholder={noTranslate ? placeholder : t(placeholder)}
-                />
-            ) : (
+		<div className={cl.root}>
+			{label && (
+				<label
+					className={classNames(
+						cl.root__label,
+						error ? cl.root__label_error : ''
+					)}
+					htmlFor={labelId}>
+					{noTranslate ? label : t(label)}
+				</label>
+			)}
+			<div className={cl.root__input__wrapper}>
                 <input
-                    className={inputClasses}
-                    id={labelId}
-                    placeholder={noTranslate ? placeholder : t(placeholder)}
-                    {...props}
+                    className={classNames(
+						cl.root__input,
+						className ?? '',
+						error ? cl.root__input_error : ''
+                    )}
+					id={labelId}
+					placeholder={noTranslate ? placeholder : t(placeholder)}
+					type={type === 'password' && isPasswordShow ? 'text' : type}
+					{...props}
                 />
-            )}
+				{type === 'password' && (
+					<button
+						className={classNames(
+							cl.root__button,
+							isPasswordShow ? cl.root__button_active : ''
+						)}
+						onClick={() => setIsPasswordShow(!isPasswordShow)}>
+						<Icon name="Eye" />
+					</button>
+				)}
+			</div>
+            {error && <p className={cl.root__error}>{error}</p>}
         </div>
     )
 }

@@ -39,10 +39,6 @@ const meta: Meta<typeof Input> = {
             type: 'boolean',
             description: 'Is label and placeholder will be translate'
         },
-        variant: {
-            type: 'string',
-            description: 'Styles variants of input'
-        },
         type: {
             type: 'string',
             description: 'Type input'
@@ -70,6 +66,13 @@ export const WithPlaceholder: Story = {
         placeholder: 'This is placeholder'
     }
 }
+export const WithError: Story = {
+	args: {
+		label: 'This is label',
+		type: 'text',
+		error: 'This is error'
+	}
+}
 export const Translate: Story = {
     args: {
         label: 'test-translate',
@@ -85,26 +88,22 @@ export const NoTranslate: Story = {
 }
 export const ProfileEditVariant: Story = {
     args: {
-        variant: 'profile-edit',
         placeholder: 'profile-edit'
     }
 }
 export const AuthVariant: Story = {
     args: {
-        variant: 'auth',
         placeholder: 'auth'
     }
 }
 export const EventVariant: Story = {
     args: {
-        variant: 'event',
         placeholder: 'event'
     }
 }
 
 export const DescriptionVariant: Story = {
     args: {
-        variant: 'description',
         placeholder: 'description'
     }
 }
