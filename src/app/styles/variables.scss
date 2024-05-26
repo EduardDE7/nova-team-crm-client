@@ -29,6 +29,7 @@
 	--dropdown-text-color: #a99cb5;
 	--dropdown-default-color: #fff;
 	--input-color: #fff;
+	--input-bg-color: #453365;
 	--icon-color: #fff;
 }
 
@@ -41,12 +42,8 @@
 	--dropdown-text-color: #1b0a29;
 	--dropdown-default-color: #1b0a29;
 	--input-color: #1b0a29;
+	--input-bg-color: #fff;
 	--icon-color: #1fc6c6;
-}
-
-:root {
-	--accent-color: #1fc6c6;
-	--accent-light-color: color-mix(in srgb, #1fc6c6 50%, #e8d8f0 50%);
 }
 
 body {

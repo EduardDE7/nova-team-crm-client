@@ -19,14 +19,29 @@
 	&__input {
 		width: 100%;
 		padding: 12px 18px;
-		color: #877d92;
+		color: var(--input-color);
+		font-size: 16px;
 		font-family: 'Nunito Sans', sans-serif;
 		line-height: 24px;
+		background-color: var(--input-bg-color);
 		border: 1px solid #e8d8f0;
 		border-radius: 14px;
 		transition:
 			border-color 0.3s ease-in-out,
 			outline 0.3s ease-in-out;
+
+		&_search {
+			padding-left: 54px;
+			border-color: transparent;
+		}
+
+		&_auth {
+			padding-block: 15px;
+		}
+
+		&_icon {
+			padding-right: 54px;
+		}
 
 		&:focus {
 			border-color: var(--accent-color);
@@ -46,7 +61,7 @@
 		}
 
 		&::placeholder {
-			color: #877d92;
+			font-size: 16px;
 			font-family: 'Nunito Sans', sans-serif;
 			line-height: 24px;
 		}
@@ -63,22 +78,33 @@
 	&__button {
 		position: absolute;
 		top: 50%;
-		right: 18px;
 		padding: 0;
 		background-color: transparent;
 		border: none;
 		outline: none;
 		transform: translateY(-50%);
-		visibility: hidden;
 
-		& > svg [stroke] {
-			transition: stroke 0.3s ease-in-out;
-			stroke: #877d92;
+		&_custom {
+			right: 18px;
 		}
 
-		&_active {
+		&_search {
+			left: 18px;
+		}
+
+		&_password {
+			right: 18px;
+			visibility: hidden;
+
 			& > svg [stroke] {
-				stroke: var(--accent-color);
+				transition: stroke 0.3s ease-in-out;
+				stroke: #877d92;
+			}
+
+			&_active {
+				& > svg [stroke] {
+					stroke: var(--accent-color);
+				}
 			}
 		}
 
