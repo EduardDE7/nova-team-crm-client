@@ -46,6 +46,11 @@
 	--icon-color: #1fc6c6;
 }
 
+:root {
+	--accent-color: #1fc6c6;
+	--accent-light-color: color-mix(in srgb, var(--accent-color) 70%, #fff);
+}
+
 body {
     background: var(--bg-color);
 }

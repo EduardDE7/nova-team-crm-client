@@ -1,19 +1,44 @@
+/* stylelint-disable */
+
+@mixin input-element {
+	position: absolute;
+	top: 50%;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	transform: translateY(-50%);
+}
+
 .root {
-	&__label {
-		display: block;
-		margin-bottom: 7px;
-		color: #877d92;
-		font-weight: 700;
-		font-family: 'Nunito Sans', sans-serif;
-		line-height: 24px;
-
-		&_error {
-			color: #f00;
-		}
-	}
-
 	&__input__wrapper {
 		position: relative;
+
+		& > *:not(.root__input) + .root__input {
+			padding-left: 54px;
+		}
+
+		& > .root__input:not(:last-child) {
+			padding-right: 54px;
+		}
+
+		& > :not(.root__input):first-child {
+			left: 18px;
+		}
+
+		& > :not(.root__input):last-child {
+			right: 18px;
+		}
+
+		& > :not(.root__input) {
+			@include input-element;
+		}
+
+		&:hover > .root__input,
+		& > .root__input:hover {
+			border-color: var(--accent-color);
+			outline: 1px solid var(--accent-color);
+		}
 	}
 
 	&__input {
@@ -26,30 +51,10 @@
 		background-color: var(--input-bg-color);
 		border: 1px solid #e8d8f0;
 		border-radius: 14px;
-		transition:
-			border-color 0.3s ease-in-out,
-			outline 0.3s ease-in-out;
-
-		&_search {
-			padding-left: 54px;
-			border-color: transparent;
-		}
-
-		&_auth {
-			padding-block: 15px;
-		}
-
-		&_icon {
-			padding-right: 54px;
-		}
+		transition: border-color 0.3s ease-in-out;
 
 		&:focus {
 			border-color: var(--accent-color);
-			outline: none;
-		}
-
-		&:hover {
-			outline: 1px solid var(--accent-color);
 		}
 
 		&:disabled {
@@ -76,35 +81,19 @@
 	}
 
 	&__button {
-		position: absolute;
-		top: 50%;
-		padding: 0;
-		background-color: transparent;
-		border: none;
-		outline: none;
-		transform: translateY(-50%);
+		@include input-element;
 
-		&_custom {
-			right: 18px;
+		right: 18px;
+		visibility: hidden;
+
+		& > svg [stroke] {
+			transition: stroke 0.3s ease-in-out;
+			stroke: #877d92;
 		}
 
-		&_search {
-			left: 18px;
-		}
-
-		&_password {
-			right: 18px;
-			visibility: hidden;
-
+		&_active {
 			& > svg [stroke] {
-				transition: stroke 0.3s ease-in-out;
-				stroke: #877d92;
-			}
-
-			&_active {
-				& > svg [stroke] {
-					stroke: var(--accent-color);
-				}
+				stroke: var(--accent-color);
 			}
 		}
 
