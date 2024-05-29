@@ -3,97 +3,73 @@ import { useTranslation } from 'react-i18next'
 
 import { Icon, IconName, classNames } from '@/shared'
 
+import { Label } from '../label'
 import cl from './Input.module.scss'
 
+interface ExtendedInputProps
+	extends React.InputHTMLAttributes<HTMLInputElement> {
+	leftElement?: React.ReactNode
+	rightElement?: React.ReactNode
+}
+
 export const Input = ({
-    label,
-    noTranslate,
+	label,
 	placeholder,
 	error,
 	type = 'text',
-    variant = 'default',
-	icon,
-	onClickIcon,
+	leftElement,
+	rightElement,
 	...props
-}: {
+}: ExtendedInputProps & {
 	label?: string
-	noTranslate?: boolean
 	placeholder: string
 	error?: string
 	type?: 'text' | 'password' | 'tel' | 'date' | 'email'
-	variant?: 'search' | 'default' | 'auth'
-	required?: boolean
 	disabled?: boolean
 	icon?: IconName
 	onClickIcon?: () => void
 }) => {
-    const [isPasswordShow, setIsPasswordShow] = useState(false)
+	const [isPasswordShow, setIsPasswordShow] = useState(false)
 
-    const { t } = useTranslation()
+	const { t } = useTranslation()
 
-    const labelId = useId()
+	const labelId = useId()
 
-    return (
+	return (
 		<div className={cl.root}>
 			{label && (
-				<label
-					className={classNames(
-						cl.root__label,
-						error ? cl.root__label_error : ''
-					)}
-					htmlFor={labelId}>
-					{noTranslate ? label : t(label)}
-				</label>
+				<Label
+					text={label}
+					htmlFor={labelId}
+					error={error}
+				/>
 			)}
+
 			<div className={cl.root__input__wrapper}>
-                {variant === 'search' && (
-					<button
-						onClick={onClickIcon}
-						className={classNames(
-							cl.root__button,
-							cl.root__button_search
-						)}>
-						<Icon name="Search" />
-					</button>
-				)}
+				{leftElement}
 				<input
 					className={classNames(
 						cl.root__input,
-						variant === 'search' ? cl.root__input_search : '',
-						variant === 'auth' ? cl.root__input_auth : '',
-						icon || type === 'password' ? cl.root__input_icon : '',
 						error ? cl.root__input_error : ''
-                    )}
+					)}
 					id={labelId}
-					placeholder={noTranslate ? placeholder : t(placeholder)}
+					placeholder={t(placeholder)}
 					type={type === 'password' && isPasswordShow ? 'text' : type}
 					{...props}
-                />
+				/>
 				{type === 'password' && (
 					<button
 						className={classNames(
 							cl.root__button,
-							cl.root__button_password,
-							isPasswordShow
-								? cl.root__button_password_active
-								: ''
+							isPasswordShow ? cl.root__button_active : ''
 						)}
 						onClick={() => setIsPasswordShow(!isPasswordShow)}>
 						<Icon name="Eye" />
 					</button>
 				)}
-				{icon && (
-					<button
-						className={classNames(
-							cl.root__button,
-							cl.root__button_custom
-						)}
-						onClick={onClickIcon}>
-						<Icon name={icon} />
-					</button>
-				)}
+				{rightElement}
 			</div>
-            {error && <p className={cl.root__error}>{error}</p>}
-        </div>
-    )
+			{error && <p className={cl.root__error}>{error}</p>}
+		</div>
+	)
 }
