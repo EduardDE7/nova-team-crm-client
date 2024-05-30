@@ -31,6 +31,8 @@
         "notifications": "Уведомления",
         "my_profile": "Мой профиль",
         "my_schedule": "Мое расписание",
-        "settings": "Настройки"
+        "settings": "Настройки",
+        "invalid_email_address": "Неверный адрес электронной почты",
+        "password_must_be_at_least_8_characters_long": "Пароль должен быть длиной не менее 8 символов"
     }
 }

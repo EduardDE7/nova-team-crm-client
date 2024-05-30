@@ -29,6 +29,8 @@
         "notifications": "Notifications",
         "my_profile": "My Profile",
         "my_schedule": "My Schedule",
-        "settings": "Settings"
+        "settings": "Settings",
+        "invalid_email_address": "Invalid email address",
+        "password_must_be_at_least_8_characters_long": "Password must be at least 8 characters long"
     }
 }
