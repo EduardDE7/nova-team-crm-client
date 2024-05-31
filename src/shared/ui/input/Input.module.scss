@@ -1,52 +1,11 @@
 /* stylelint-disable */
 
-@mixin input-element {
-	position: absolute;
-	top: 50%;
-	padding: 0;
-	background-color: transparent;
-	border: none;
-	outline: none;
-	transform: translateY(-50%);
-}
-
 .root {
-	&__input__wrapper {
-		position: relative;
-
-		& > *:not(.root__input) + .root__input {
-			padding-left: 54px;
-		}
-
-		& > .root__input:not(:last-child) {
-			padding-right: 54px;
-		}
-
-		& > :not(.root__input):first-child {
-			left: 18px;
-		}
-
-		& > :not(.root__input):last-child {
-			right: 18px;
-		}
-
-		& > :not(.root__input) {
-			@include input-element;
-		}
-
-		&:hover > .root__input,
-		& > .root__input:hover {
-			border-color: var(--accent-color);
-			outline: 1px solid var(--accent-color);
-		}
-	}
-
 	&__input {
 		width: 100%;
 		padding: 12px 18px;
 		color: var(--input-color);
 		font-size: 16px;
-		font-family: 'Nunito Sans', sans-serif;
 		line-height: 24px;
 		background-color: var(--input-bg-color);
 		border: 1px solid #e8d8f0;
@@ -55,6 +14,11 @@
 
 		&:focus {
 			border-color: var(--accent-color);
+		}
+
+		&:hover {
+			border-color: var(--accent-color);
+			outline: 1px solid var(--accent-color);
 		}
 
 		&:disabled {
@@ -74,47 +38,8 @@
 
 	&__error {
 		color: #f00;
-		font-weight: 700;
-		font-size: 14px;
+		font-size: 15px;
 		line-height: 24px;
-		padding-inline-start: 10px;
-	}
-
-	&__button {
-		@include input-element;
-
-		right: 18px;
-		visibility: hidden;
-
-		& > svg [stroke] {
-			transition: stroke 0.3s ease-in-out;
-			stroke: #877d92;
-		}
-
-		&_active {
-			& > svg [stroke] {
-				stroke: var(--accent-color);
-			}
-		}
-
-		&:hover {
-			& > svg [stroke] {
-				stroke: var(--accent-light-color);
-			}
-		}
-	}
-
-	input:not(:placeholder-shown) + &__button {
-		visibility: visible;
-	}
-
-	input[type='password']::-ms-reveal,
-	input[type='password']::-ms-clear {
-		display: none;
-	}
-
-	input[type='password']::-webkit-input-speech-button,
-	input[type='password']::-webkit-credentials-auto-fill-button {
-		display: none;
+		padding-inline-start: 18px;
 	}
 }

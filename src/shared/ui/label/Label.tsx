@@ -7,14 +7,14 @@ import cl from './Label.module.scss'
 interface LabelProps {
 	text: string
 	htmlFor: string
-	error?: string
+	isError?: boolean
 }
-export const Label = ({ text, htmlFor, error }: LabelProps) => {
+export const Label = ({ text, htmlFor, isError }: LabelProps) => {
 	const { t } = useTranslation()
 
 	return (
 		<label
-			className={classNames(cl.root, error ? cl.root_error : '')}
+			className={classNames(cl.root, isError ? cl.root_error : '')}
 			htmlFor={htmlFor}>
 			{t(text)}
 		</label>
