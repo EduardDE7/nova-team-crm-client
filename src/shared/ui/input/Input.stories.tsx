@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-// eslint-disable-next-line
-import '@/app/styles/variables.scss'
-
+import { Icon } from '../icon'
 import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
@@ -31,6 +29,23 @@ export const Default: Story = {
         placeholder: 'This is placeholder'
     }
 }
+
+export const WithLeftIcon: Story = {
+	args: {
+		type: 'text',
+		placeholder: 'This is placeholder',
+		leftIcon: <Icon name={'Search'} />
+	}
+}
+
+export const WithRightIcon: Story = {
+	args: {
+		type: 'text',
+		placeholder: 'This is placeholder',
+		rightIcon: <Icon name={'Add'} />
+	}
+}
+
 export const WithError: Story = {
 	args: {
 		type: 'text',
@@ -58,4 +73,13 @@ export const DescriptionVariant: Story = {
     args: {
         placeholder: 'description'
     }
+}
+
+export const Disabled: Story = {
+	args: {
+		type: 'text',
+		placeholder: 'This is placeholder',
+		disabled: true,
+		leftIcon: <Icon name={'Search'} />
+	}
 }
