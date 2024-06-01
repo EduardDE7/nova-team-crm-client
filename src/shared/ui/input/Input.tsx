@@ -6,7 +6,6 @@ import cl from './Input.module.scss'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	error?: string
-	placeholder: string
 	leftIcon?: React.ReactNode
 	rightIcon?: React.ReactNode
 }
@@ -32,7 +31,7 @@ export const Input = ({
 				{leftIcon}
 				<input
 					className={cl.root__input}
-					placeholder={t(placeholder)}
+					placeholder={placeholder && t(placeholder)}
 					{...props}
 				/>
 				{rightIcon}
