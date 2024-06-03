@@ -32,7 +32,11 @@
         "my_profile": "Мой профиль",
         "my_schedule": "Мое расписание",
         "settings": "Настройки",
-        "invalid_email_address": "Неверный адрес электронной почты",
-        "password_must_be_at_least_8_characters_long": "Пароль должен быть длиной не менее 8 символов"
+        "invalid email address": "Неверный адрес электронной почты",
+        "password must be at least 8 characters long": "Пароль должен быть длиной не менее 8 символов",
+        "password must contain at least one lowercase letter": "Пароль должен содержать хотя бы одну строчную букву",
+        "password must contain at least one number": "Пароль должен содержать хотя бы одну цифру",
+        "password must contain at least one uppercase letter": "Пароль должен содержать хотя бы одну заглавную букву",
+        "password must contain at least one special character": "Пароль должен содержать хотя бы один специальный символ"
     }
 }
