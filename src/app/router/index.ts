@@ -1,4 +1,4 @@
-export { managerRoutes } from './manager';
+export { managerRoutes } from './manager'
 export { mentorRoutes } from './mentor'
-export { unLoginRoutes } from './unlogin';
-export { studentRoutes } from './student';
+export { unLoginRoutes } from './unlogin'
+export { studentRoutes } from './student'

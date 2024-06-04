@@ -1,27 +1,27 @@
 .root {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 16px;
-	padding: 20px 16px;
-	background-color: #f9f4fd;
-	border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    background-color: #f9f4fd;
+    border-radius: 14px;
 
-	&__title {
-		color: #1b0a29;
-		font-weight: 700;
-		font-size: 16px;
-		line-height: 24px;
-	}
+    &__title {
+        color: #1b0a29;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+    }
 
-	&__description {
-		color: #877d92;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 22px;
-	}
+    &__description {
+        color: #877d92;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+    }
 
-	&__toggle {
-		min-width: 51px;
-	}
+    &__toggle {
+        min-width: 51px;
+    }
 }

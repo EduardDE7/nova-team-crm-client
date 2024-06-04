@@ -1,1 +1,1 @@
-export { PercentCircle } from './PercentCircle';
+export { PercentCircle } from './PercentCircle'

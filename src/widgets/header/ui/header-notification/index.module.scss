@@ -1,30 +1,30 @@
 .root {
-	position: fixed;
-	inset: 0;
-	display: flex;
-	justify-content: end;
-	padding: 20px 40px;
-	background: rgb(215 206 255 / 50%);
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.3s linear;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: end;
+    padding: 20px 40px;
+    background: rgb(215 206 255 / 50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
 
-	&__body {
-		align-self: start;
-		width: 440px;
-		background: #fff;
-		border-radius: 24px;
+    &__body {
+        align-self: start;
+        width: 440px;
+        background: #fff;
+        border-radius: 24px;
 
-		&__top {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 32px 30px;
-		}
-	}
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 30px;
+        }
+    }
 
-	&_active {
-		visibility: visible;
-		opacity: 100;
-	}
+    &_active {
+        visibility: visible;
+        opacity: 100;
+    }
 }

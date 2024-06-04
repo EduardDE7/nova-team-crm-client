@@ -1,4 +1,4 @@
-.root{
+.root {
     display: flex;
     align-items: center;
     width: 380px;
@@ -7,16 +7,15 @@
     background-color: var(--bg-color-secondary);
     border-radius: 10px;
 
-    &__input{
+    &__input {
         color: var(--input-color);
         font-weight: 700;
         font-size: 16px;
         font-family: 'Nunito Sans', sans-serif;
         background-color: var(--bg-color-secondary);
 
-
-        &::placeholder{
-            color: #D8D8D8;
+        &::placeholder {
+            color: #d8d8d8;
             font-weight: 400;
             font-size: 16px;
             font-family: 'Nunito Sans', sans-serif;

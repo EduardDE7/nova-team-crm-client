@@ -1,86 +1,86 @@
 .root {
-	display: inline-flex;
-	align-items: center;
-	background: none;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 6px 58px 0 rgb(196 203 214 / 10%);
-	cursor: pointer;
-	transition: all 0.5s linear;
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 58px 0 rgb(196 203 214 / 10%);
+    cursor: pointer;
+    transition: all 0.5s linear;
 
-	&:focus {
-		outline: none;
-	}
+    &:focus {
+        outline: none;
+    }
 
-	&:hover {
-		filter: brightness(0.95);
-	}
+    &:hover {
+        filter: brightness(0.95);
+    }
 
-	&:active {
-		transform: scale(0.95);
-		filter: brightness(0.8);
-	}
+    &:active {
+        transform: scale(0.95);
+        filter: brightness(0.8);
+    }
 
-	&__icon {
-		justify-content: center;
-		aspect-ratio: 1;
-	}
+    &__icon {
+        justify-content: center;
+        aspect-ratio: 1;
+    }
 
-	&__text,
-	&text_icon {
-		height: 48px;
-	}
+    &__text,
+    &text_icon {
+        height: 48px;
+    }
 
-	&__text {
-		justify-content: center;
-		padding-inline: 20px;
-	}
+    &__text {
+        justify-content: center;
+        padding-inline: 20px;
+    }
 
-	&__text_icon {
-		gap: 48px;
-		justify-content: space-between;
-		padding-right: 16px;
-		padding-left: 19px;
-	}
+    &__text_icon {
+        gap: 48px;
+        justify-content: space-between;
+        padding-right: 16px;
+        padding-left: 19px;
+    }
 
-	&__primary {
-		color: #000;
-		background-color: #ffff;
+    &__primary {
+        color: #000;
+        background-color: #ffff;
 
-		svg [fill] {
-			fill: var(--icon-color);
-		}
-	}
+        svg [fill] {
+            fill: var(--icon-color);
+        }
+    }
 
-	&__secondary {
-		background-color: #1fc6c6;
+    &__secondary {
+        background-color: #1fc6c6;
 
-		& > p {
-			color: #ffff;
-		}
+        & > p {
+            color: #ffff;
+        }
 
-		svg [fill] {
-			fill: #ffff;
-		}
-	}
+        svg [fill] {
+            fill: #ffff;
+        }
+    }
 
-	&__icon_primary {
-		width: 48px;
-		color: #1fc6c6;
-		background-color: #ffff;
-	}
+    &__icon_primary {
+        width: 48px;
+        color: #1fc6c6;
+        background-color: #ffff;
+    }
 
-	&__icon_secondary {
-		width: 44px;
-		color: #1fc6c6;
-		background-color: #f9f4fd;
-	}
+    &__icon_secondary {
+        width: 44px;
+        color: #1fc6c6;
+        background-color: #f9f4fd;
+    }
 
-	&_full {
-		width: 100%;
-	}
+    &_full {
+        width: 100%;
+    }
 
-	&_thin {
-		height: 36px;
-	}
+    &_thin {
+        height: 36px;
+    }
 }

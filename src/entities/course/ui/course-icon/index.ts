@@ -1,2 +1,1 @@
-export { CourseIcon } from "./CourseIcon";
-
+export { CourseIcon } from './CourseIcon'

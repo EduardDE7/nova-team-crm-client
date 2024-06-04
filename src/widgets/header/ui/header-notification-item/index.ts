@@ -1,1 +1,1 @@
-export  { HeaderNotificationItem } from './HeaderNotificationItem';
+export { HeaderNotificationItem } from './HeaderNotificationItem'

@@ -3,9 +3,9 @@ import { configureStore } from '@reduxjs/toolkit'
 import { theme } from '@/shared'
 
 export const store = configureStore({
-	reducer: {
-		theme
-	}
+    reducer: {
+        theme
+    }
 })
 
 export type TStore = ReturnType<typeof store.getState>

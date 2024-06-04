@@ -1,6 +1,6 @@
 export type DropdownOption = {
-	title: string
-	value: string
-	link?: string
-	profileImage?: string
+    title: string
+    value: string
+    link?: string
+    profileImage?: string
 }

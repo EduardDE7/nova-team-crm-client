@@ -1,41 +1,41 @@
 .root {
-	max-width: 444px;
-	padding: 31px;
-	background: #fff;
-	border-radius: 0 24px 24px 0;
+    max-width: 444px;
+    padding: 31px;
+    background: #fff;
+    border-radius: 0 24px 24px 0;
 
-	&__title {
-		margin-bottom: 15px;
-	}
+    &__title {
+        margin-bottom: 15px;
+    }
 
-	&__body {
-		display: flex;
+    &__body {
+        display: flex;
 
-		&__all {
-			margin-right: 44px;
-		}
+        &__all {
+            margin-right: 44px;
+        }
 
-		&__uploaded {
-			margin-right: 24px;
-		}
+        &__uploaded {
+            margin-right: 24px;
+        }
 
-		&__title {
-			margin-bottom: 10px;
-		}
+        &__title {
+            margin-bottom: 10px;
+        }
 
-		&__teacher {
-			img {
-				width: 24px;
-				height: 24px;
-				border-radius: 50%;
-			}
-		}
+        &__teacher {
+            img {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+            }
+        }
 
-		&__text {
-			color: #1b0a29;
-			font-weight: 600;
-			font-size: 16px;
-			line-height: 24px;
-		}
-	}
+        &__text {
+            color: #1b0a29;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
 }

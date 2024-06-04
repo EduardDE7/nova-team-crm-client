@@ -1,3 +1,3 @@
-import { setupI18n } from "@/shared";
+import { setupI18n } from '@/shared'
 
-setupI18n();
+setupI18n()

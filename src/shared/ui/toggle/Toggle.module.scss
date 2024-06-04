@@ -1,26 +1,26 @@
 .root {
-	display: flex;
-	align-items: center;
-	width: 51px;
-	height: 31px;
-	background: #d9d9d9;
-	border-radius: 18px;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 51px;
+    height: 31px;
+    background: #d9d9d9;
+    border-radius: 18px;
+    cursor: pointer;
 
-	&_active {
-		background: #23dcdc;
-	}
+    &_active {
+        background: #23dcdc;
+    }
 
-	&__body {
-		width: 23px;
-		height: 23px;
-		background: #fff;
-		border-radius: 50%;
-		transform: translateX(5px);
-		transition: all 0.2s linear;
+    &__body {
+        width: 23px;
+        height: 23px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translateX(5px);
+        transition: all 0.2s linear;
 
-		&_active {
-			transform: translateX(24px);
-		}
-	}
+        &_active {
+            transform: translateX(24px);
+        }
+    }
 }
