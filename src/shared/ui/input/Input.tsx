@@ -36,7 +36,7 @@ export const Input = ({
 				/>
 				{rightIcon}
 			</div>
-<p className={classNames(cl.root__error, error ? '' : cl.root__error_hidden)}>{error}</p>
+			<p className={cl.root__error}>{error}</p>
 		</div>
 	)
 }
