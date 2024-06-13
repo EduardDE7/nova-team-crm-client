@@ -1,4 +1,4 @@
-import { AuthPage } from '@/pages/home'
+import { AuthPage } from '@/pages/AuthPage'
 
 import type { TRouteItem } from './types'
 

@@ -1,4 +1,4 @@
-import { LoginPage } from '@/pages/home'
+import { LoginPage } from '@/pages/Login'
 
 import type { TRouteItem } from './types'
 

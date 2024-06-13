@@ -1,4 +1,4 @@
-import { DashboardPage } from '@/pages/home'
+import { DashboardPage } from '@/pages/Dashboard'
 
 import type { TRouteItem } from './types'
 
