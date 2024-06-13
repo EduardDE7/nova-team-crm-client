@@ -29,6 +29,12 @@
         "notifications": "Notifications",
         "my_profile": "My Profile",
         "my_schedule": "My Schedule",
-        "settings": "Settings"
+        "settings": "Settings",
+        "invalid email address": "Invalid email address",
+        "password must be at least 8 characters long": "Password must be at least 8 characters long",
+        "password must contain at least one lowercase letter": "Password must contain at least one lowercase letter",
+        "password must contain at least one number": "Password must contain at least one number",
+        "password must contain at least one uppercase letter": "Password must contain at least one uppercase letter",
+        "password must contain at least one special character": "Password must contain at least one special character"
     }
 }
