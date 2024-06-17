@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import { privateRoutes, publicRoutes } from '@/shared'
 import { useIsAuthorizedValue } from '@/shared/api/is-authorized'
@@ -9,8 +9,7 @@ type TRouteItem = {
     path: string
 }
 
-//add the function correctly
-const checkedRoutes = (route: TRouteItem[]) => {
+const routingByPublickRoutes = (route: TRouteItem[]) => {
     const routes = route.map(({ Page, path }: TRouteItem) => (
         <Route
             key={path}
@@ -21,13 +20,45 @@ const checkedRoutes = (route: TRouteItem[]) => {
     return <>{routes}</>
 }
 
+const routingByPrivateRoutes = (route: TRouteItem[], checkedAuth: boolean) => {
+    if (checkedAuth) {
+        const routes = route.map(({ Page, path }: TRouteItem) => (
+            <Route
+                key={path}
+                path={path}
+                element={<Page />}
+            />
+        ))
+        return <>{routes}</>
+    }
+    const routes = route.map(({ Page, path }: TRouteItem) =>
+        path === '/dashboard' ? (
+            <Route
+                key={path}
+                path={path}
+                element={<Navigate to="/login" />}
+            />
+        ) : (
+            <Route
+                key={path}
+                path={path}
+                element={<Page />}
+            />
+        )
+    )
+    return <>{routes}</>
+}
+
 export const RouterProvider = () => {
+    const authorizedValue = useIsAuthorizedValue()
+    const allRoutes = publicRoutes.concat(privateRoutes)
+
     return (
         <BrowserRouter>
             <Routes>
-                {useIsAuthorizedValue()
-                    ? checkedRoutes(privateRoutes)
-                    : checkedRoutes(publicRoutes)}
+                {!authorizedValue
+                    ? routingByPrivateRoutes(allRoutes, authorizedValue)
+                    : routingByPublickRoutes(publicRoutes)}
             </Routes>
         </BrowserRouter>
     )
