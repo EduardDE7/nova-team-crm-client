@@ -1,55 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Cookies from 'js-cookie'
 
-import { useEffect } from 'react'
-
-import { setupI18n } from '@/shared'
-
+import { Icon } from '../icon'
 import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
     title: 'shared/Input',
     component: Input,
     tags: ['autodocs'],
-    decorators: [
-        // i18n setup
-        Story => {
-            useEffect(() => {
-                Cookies.set('language', 'ru')
-                setupI18n()
-            }, [])
-
-            return <Story />
-        }
-    ],
     argTypes: {
-        className: {
-            type: 'string',
-            description: 'ClassName for customization component'
-        },
-        label: {
-            type: 'string',
-            description: 'Label for input'
-        },
         placeholder: {
             type: 'string',
             description: 'Placeholder for input'
         },
-        noTranslate: {
-            type: 'boolean',
-            description: 'Is label and placeholder will be translate'
-        },
-        variant: {
+        error: {
             type: 'string',
-            description: 'Styles variants of input'
-        },
-        type: {
-            type: 'string',
-            description: 'Type input'
-        },
-        required: {
-            type: 'boolean',
-            description: 'Is field required'
+            description: 'Error for input'
         }
     }
 } satisfies Meta<typeof Input>
@@ -58,53 +23,42 @@ export default meta
 
 type Story = StoryObj<typeof Input>
 
-export const WithLabel: Story = {
-    args: {
-        label: 'This is label',
-        type: 'text'
-    }
-}
-export const WithPlaceholder: Story = {
+export const Default: Story = {
     args: {
         type: 'text',
         placeholder: 'This is placeholder'
     }
 }
-export const Translate: Story = {
+
+export const WithLeftIcon: Story = {
     args: {
-        label: 'test-translate',
-        placeholder: 'test-translate'
-    }
-}
-export const NoTranslate: Story = {
-    args: {
-        label: 'no translated label',
-        noTranslate: true,
-        placeholder: 'no translated placeholder'
-    }
-}
-export const ProfileEditVariant: Story = {
-    args: {
-        variant: 'profile-edit',
-        placeholder: 'profile-edit'
-    }
-}
-export const AuthVariant: Story = {
-    args: {
-        variant: 'auth',
-        placeholder: 'auth'
-    }
-}
-export const EventVariant: Story = {
-    args: {
-        variant: 'event',
-        placeholder: 'event'
+        type: 'text',
+        placeholder: 'This is placeholder',
+        leftIcon: <Icon name={'Search'} />
     }
 }
 
-export const DescriptionVariant: Story = {
+export const WithRightIcon: Story = {
     args: {
-        variant: 'description',
-        placeholder: 'description'
+        type: 'text',
+        placeholder: 'This is placeholder',
+        rightIcon: <Icon name={'Add'} />
+    }
+}
+
+export const WithError: Story = {
+    args: {
+        type: 'text',
+        error: 'This is error',
+        placeholder: 'This is placeholder'
+    }
+}
+
+export const Disabled: Story = {
+    args: {
+        type: 'text',
+        placeholder: 'This is placeholder',
+        disabled: true,
+        leftIcon: <Icon name={'Search'} />
     }
 }

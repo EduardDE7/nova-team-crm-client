@@ -1,27 +1,36 @@
 [data-theme='dark'] {
-    --bg-color: #111;
     --font-color: #fff;
+    --bg-color: #241f2e;
     --bg-color-secondary: #453365;
     --dropdown-bg-color: #453365;
     --dropdown-break-color: #6e4c89;
     --dropdown-text-color: #a99cb5;
     --dropdown-default-color: #fff;
     --input-color: #fff;
+    --input-placeholder-color: #a99cb5;
+    --input-bg-color: #453365;
+    --input-error-color: #f93042;
+    --input-disable-color: #d9d9d9;
     --icon-color: #fff;
 }
 
 [data-theme='light'] {
-    --bg-color: #fff;
     --font-color: #111;
+    --bg-color: #f9f4fd;
     --bg-color-secondary: #fff;
     --dropdown-bg-color: #fff;
     --dropdown-break-color: #e8d8f0;
     --dropdown-text-color: #1b0a29;
     --dropdown-default-color: #1b0a29;
     --input-color: #1b0a29;
+    --input-placeholder-color: #877d92;
+    --input-bg-color: #fff;
+    --input-error-color: #f65160;
+    --input-disable-color: #d9d9d9;
     --icon-color: #1fc6c6;
 }
 
-body {
-    background: var(--bg-color);
+:root {
+    --accent-color: #1fc6c6;
+    --accent-light-color: color-mix(in srgb, var(--accent-color) 70%, #fff);
 }

@@ -15,6 +15,7 @@ import DarkMode from '@/shared/assets/icons/dark-mode.svg?react'
 import Dashboard from '@/shared/assets/icons/dashboard.svg?react'
 import Done from '@/shared/assets/icons/done.svg?react'
 import Edit from '@/shared/assets/icons/edit.svg?react'
+import Eye from '@/shared/assets/icons/eye.svg?react'
 import InfoPortal from '@/shared/assets/icons/infoPortal.svg?react'
 import LightMode from '@/shared/assets/icons/light-mode.svg?react'
 import Logout from '@/shared/assets/icons/logout.svg?react'
@@ -52,7 +53,8 @@ export const icons = {
     More,
     Close,
     DarkMode,
-    LightMode
+    LightMode,
+    Eye
 }
 
 export type IconName = keyof typeof icons
