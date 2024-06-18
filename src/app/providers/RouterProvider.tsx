@@ -9,7 +9,7 @@ type TRouteItem = {
     path: string
 }
 
-const routingByPublickRoutes = (route: TRouteItem[]) => {
+const notAuthorizedRoute = (route: TRouteItem[]) => {
     const routes = route.map(({ Page, path }: TRouteItem) => (
         <Route
             key={path}
@@ -20,32 +20,23 @@ const routingByPublickRoutes = (route: TRouteItem[]) => {
     return <>{routes}</>
 }
 
-const routingByPrivateRoutes = (route: TRouteItem[], checkedAuth: boolean) => {
-    if (checkedAuth) {
-        const routes = route.map(({ Page, path }: TRouteItem) => (
-            <Route
-                key={path}
-                path={path}
-                element={<Page />}
-            />
-        ))
-        return <>{routes}</>
-    }
-    const routes = route.map(({ Page, path }: TRouteItem) =>
-        path === '/dashboard' ? (
-            <Route
-                key={path}
-                path={path}
-                element={<Navigate to="/login" />}
-            />
-        ) : (
-            <Route
-                key={path}
-                path={path}
-                element={<Page />}
-            />
-        )
-    )
+const isAuthorizedRoute = (route: TRouteItem[], checkedAuth: boolean) => {
+    const routes = route.map(({ Page, path }: TRouteItem) => (
+        <Route
+            key={path}
+            path={path}
+            element={
+                checkedAuth ? (
+                    <Page />
+                ) : (
+                    <Navigate
+                        to="/login"
+                        replace
+                    />
+                )
+            }
+        />
+    ))
     return <>{routes}</>
 }
 
@@ -56,9 +47,8 @@ export const RouterProvider = () => {
     return (
         <BrowserRouter>
             <Routes>
-                {!authorizedValue
-                    ? routingByPrivateRoutes(allRoutes, authorizedValue)
-                    : routingByPublickRoutes(publicRoutes)}
+                {notAuthorizedRoute(publicRoutes)}
+                {isAuthorizedRoute(allRoutes, authorizedValue)}
             </Routes>
         </BrowserRouter>
     )
