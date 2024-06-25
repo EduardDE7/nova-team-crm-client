@@ -4,6 +4,9 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { privateRoutes, publicRoutes } from '@/shared'
 import { useIsAuthorizedValue } from '@/shared/api/is-authorized'
 
+// eslint-disable-next-line import/no-internal-modules
+import { NOTFOUNDPAGE } from '@/shared/router/URL/index'
+
 type TRouteItem = {
     Page: FC
     path: string
@@ -42,13 +45,24 @@ const isAuthorizedRoute = (route: TRouteItem[], checkedAuth: boolean) => {
 
 export const RouterProvider = () => {
     const authorizedValue = useIsAuthorizedValue()
-    const allRoutes = publicRoutes.concat(privateRoutes)
+    const personalRoutes = publicRoutes.concat(privateRoutes)
 
     return (
         <BrowserRouter>
             <Routes>
                 {notAuthorizedRoute(publicRoutes)}
-                {isAuthorizedRoute(allRoutes, authorizedValue)}
+                {isAuthorizedRoute(personalRoutes, authorizedValue)}
+                {
+                    <Route
+                        path="*"
+                        element={
+                            <Navigate
+                                to={NOTFOUNDPAGE}
+                                replace
+                            />
+                        }
+                    />
+                }
             </Routes>
         </BrowserRouter>
     )
