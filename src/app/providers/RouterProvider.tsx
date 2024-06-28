@@ -1,18 +1,64 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { FC } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
-import { routes } from '../routes'
+import { privateRoutes, publicRoutes } from '@/shared'
+import { useIsAuthorizedValue } from '@/shared/api/is-authorized'
+// eslint-disable-next-line import/no-internal-modules
+import { NOTFOUNDPAGE } from '@/shared/router/URL/index'
+
+type TRouteItem = {
+    Page: FC
+    path: string
+}
+
+const notAuthorizedRoute = (route: TRouteItem[]) => {
+    const routes = route.map(({ Page, path }: TRouteItem) => (
+        <Route
+            key={path}
+            path={path}
+            element={<Page />}
+        />
+    ))
+    return <>{routes}</>
+}
+
+const isAuthorizedRoute = (route: TRouteItem[], checkedAuth: boolean) => {
+    const routes = route.map(({ Page, path }: TRouteItem) => (
+        <Route
+            key={path}
+            path={path}
+            element={
+                checkedAuth ? (
+                    <Page />
+                ) : (
+                    <Navigate
+                        to="/login"
+                        replace
+                    />
+                )
+            }
+        />
+    ))
+    return <>{routes}</>
+}
 
 export const RouterProvider = () => {
+    const authorizedValue = useIsAuthorizedValue()
+
     return (
         <BrowserRouter>
             <Routes>
-                {routes.map(({ Page, path }) => (
-                    <Route
-                        key={path}
-                        path={path}
-                        element={<Page />}
-                    />
-                ))}
+                {notAuthorizedRoute(publicRoutes)}
+                {isAuthorizedRoute(privateRoutes, authorizedValue)}
+                <Route
+                    path="*"
+                    element={
+                        <Navigate
+                            to={NOTFOUNDPAGE}
+                            replace
+                        />
+                    }
+                />
             </Routes>
         </BrowserRouter>
     )
