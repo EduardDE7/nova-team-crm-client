@@ -1,7 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 /* eslint-disable import/no-internal-modules */
-import NotFound from '@/shared/assets/icons/404.svg?react'
 import Add from '@/shared/assets/icons/add.svg?react'
 import Arrow from '@/shared/assets/icons/arrow.svg?react'
 import Calendar from '@/shared/assets/icons/calendar.svg?react'
@@ -55,8 +54,7 @@ export const icons = {
     Close,
     DarkMode,
     LightMode,
-    Eye,
-    NotFound
+    Eye
 }
 
 export type IconName = keyof typeof icons
