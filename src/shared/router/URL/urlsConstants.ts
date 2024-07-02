@@ -1,5 +1,0 @@
-export const HOMEPAGE: string = '/'
-export const LOGINPAGE: string = '/login'
-export const AUTHPAGE: string = '/auth'
-export const NOTFOUNDPAGE: string = '/notfound'
-export const DASHBOARDPAGE: string = '/dashboard'
