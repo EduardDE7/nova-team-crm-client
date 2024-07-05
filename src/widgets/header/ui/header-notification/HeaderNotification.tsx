@@ -11,7 +11,7 @@ export const HeaderNotification = ({
     setIsOpen
 }: {
     isOpen: boolean
-    setIsOpen: (o: boolean) => void // eslint-disable-line no-unused-vars
+    setIsOpen: (o: boolean) => void
 }) => {
     useEffect(() => {
         if (isOpen) {

@@ -1,6 +1,5 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-/* eslint-disable import/no-internal-modules */
 import Add from '@/shared/assets/icons/add.svg?react'
 import Arrow from '@/shared/assets/icons/arrow.svg?react'
 import Calendar from '@/shared/assets/icons/calendar.svg?react'

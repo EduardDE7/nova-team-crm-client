@@ -12,7 +12,6 @@ export const Dropdown = ({
     options
 }: {
     activeValue?: DropdownOption
-    // eslint-disable-next-line no-unused-vars
     setActiveValue?: (value: DropdownOption) => void
     options: DropdownOption[]
 }) => {
