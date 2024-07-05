@@ -1,4 +1,4 @@
 {
-    "*.scss": "npm run stylelint",
-    "*.{js,jsx,ts,tsx}": "npm run lint"
+    "*.scss": "npm run prettier:fix",
+    "*.{js,jsx,ts,tsx}": "npm run prettier:fix"
 }
