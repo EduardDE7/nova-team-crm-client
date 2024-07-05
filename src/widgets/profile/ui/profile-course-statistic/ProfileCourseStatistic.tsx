@@ -1,8 +1,7 @@
-import { Typography } from '@/shared'
-
 import cl from './ProfileCourseStatistic.module.scss'
 // eslint-disable-next-line
 import ProfileImage from './course-mentor-example.png'
+import { Typography } from '@/shared'
 
 const { Text, Title } = Typography
 

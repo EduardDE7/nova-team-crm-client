@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-import { Icon, Typography } from '@/shared'
-
 import cl from './Dropdown.module.scss'
 import { DropdownOption } from './types'
+import { Icon, Typography } from '@/shared'
 
 const { Text } = Typography
 

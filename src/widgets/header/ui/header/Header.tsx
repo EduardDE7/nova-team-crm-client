@@ -1,5 +1,8 @@
 import { useState } from 'react'
-
+import { HeaderNotification } from '../header-notification'
+import { HeaderSearch } from '../header-search'
+import cl from './Header.module.scss'
+import profileImage from './profile_image.png'
 import {
     Button,
     Dropdown,
@@ -7,11 +10,6 @@ import {
     useAppDispatch,
     useAppSelector
 } from '@/shared'
-
-import { HeaderNotification } from '../header-notification'
-import { HeaderSearch } from '../header-search'
-import cl from './Header.module.scss'
-import profileImage from './profile_image.png'
 
 export const Header = () => {
     const [isNotificationOpen, setIsNotificationOpen] = useState(false)

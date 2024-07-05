@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next'
-
-import { classNames } from '@/shared'
-
 import cl from './Text.module.scss'
+import { classNames } from '@/shared'
 
 export const Text = ({
     className,

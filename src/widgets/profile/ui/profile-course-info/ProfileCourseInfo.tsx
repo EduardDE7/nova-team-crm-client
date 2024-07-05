@@ -1,6 +1,5 @@
-import { Icon, PercentCircle, Typography } from '@/shared'
-
 import cl from './ProfileCourseInfo.module.scss'
+import { Icon, PercentCircle, Typography } from '@/shared'
 
 const { Title, Text } = Typography
 

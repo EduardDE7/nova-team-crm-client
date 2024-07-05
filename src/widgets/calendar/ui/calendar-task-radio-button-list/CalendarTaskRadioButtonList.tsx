@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import { CalendarTaskRadioButtonItem } from '../calendar-task-radio-button-item'
 import cl from './CalendarTaskRadioButtonList.module.scss'
 import { calendarTasksRadioButtonItemsArr } from './radio-buttons.data'

@@ -1,9 +1,7 @@
 import { type CSSProperties } from 'react'
-
-import { classNames } from '@/shared'
-
 import cl from './icon.module.scss'
 import { type IconName, getIcon } from './utils'
+import { classNames } from '@/shared'
 
 interface IconProps {
     name: IconName

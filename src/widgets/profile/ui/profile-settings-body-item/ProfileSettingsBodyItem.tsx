@@ -1,6 +1,5 @@
-import { Toggle, Typography } from '@/shared'
-
 import cl from './ProfileSettingsBodyItem.module.scss'
+import { Toggle, Typography } from '@/shared'
 
 const { Text } = Typography
 

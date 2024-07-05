@@ -1,8 +1,6 @@
 import i18n from 'i18next'
 import cookie from 'js-cookie'
-
 import { initReactI18next } from 'react-i18next'
-
 import en from './locales/en.json' // eslint-disable-line import/no-internal-modules
 import ru from './locales/ru.json' // eslint-disable-line import/no-internal-modules
 

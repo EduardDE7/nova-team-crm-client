@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
-
-import { Icon, Typography } from '@/shared'
-
 import cl from './ProfileCourseItem.module.scss'
+import { Icon, Typography } from '@/shared'
 
 const { Title, Text } = Typography
 

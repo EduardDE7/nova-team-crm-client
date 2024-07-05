@@ -2,7 +2,6 @@ import { AuthPage, LoginPage } from '@/pages'
 import { DashboardPage } from '@/pages/Dashboard'
 import { HomePage } from '@/pages/Home'
 import { PageNotFound } from '@/pages/PageNotFound'
-
 import {
     AUTHPAGE,
     DASHBOARDPAGE,

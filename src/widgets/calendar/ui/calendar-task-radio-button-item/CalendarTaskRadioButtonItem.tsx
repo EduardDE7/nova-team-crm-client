@@ -1,7 +1,6 @@
-import { RadioButton, Typography } from '@/shared'
-
 import type { TCalendarTasks } from '../calendar-task-radio-button-list'
 import cl from './CalendarTaskRadioButtonItem.module.scss'
+import { RadioButton, Typography } from '@/shared'
 
 const { Text } = Typography
 

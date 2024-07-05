@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
-
-import { Icon, type IconName, Typography } from '@/shared'
-
 import cl from './SidebarItem.module.scss'
+import { Icon, type IconName, Typography } from '@/shared'
 
 const { Title } = Typography
 

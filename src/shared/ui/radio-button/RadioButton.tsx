@@ -1,6 +1,5 @@
-import { classNames } from '@/shared'
-
 import cl from './RadioButton.module.scss'
+import { classNames } from '@/shared'
 
 export const RadioButton = ({
     className,

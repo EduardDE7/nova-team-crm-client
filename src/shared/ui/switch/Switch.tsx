@@ -1,6 +1,5 @@
-import { Typography, classNames } from '@/shared'
-
 import cl from './Switch.module.scss'
+import { Typography, classNames } from '@/shared'
 
 const { Text } = Typography
 

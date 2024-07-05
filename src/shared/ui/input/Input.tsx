@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next'
-
-import { classNames } from '@/shared'
-
 import cl from './Input.module.scss'
+import { classNames } from '@/shared'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     error?: string

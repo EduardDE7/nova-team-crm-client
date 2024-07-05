@@ -1,7 +1,6 @@
-import { Checkbox, Typography } from '@/shared'
-
 import { ProfileSettingsBodyItem } from '../profile-settings-body-item'
 import cl from './ProfileSettingsBodyItems.module.scss'
+import { Checkbox, Typography } from '@/shared'
 
 const { Text } = Typography
 

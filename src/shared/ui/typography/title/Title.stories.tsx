@@ -1,11 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import Cookies from 'js-cookie'
-
 import { useEffect } from 'react'
-
-import { setupI18n } from '@/shared'
-
 import { Typography } from '../Typography'
+import { setupI18n } from '@/shared'
 
 const { Title } = Typography
 

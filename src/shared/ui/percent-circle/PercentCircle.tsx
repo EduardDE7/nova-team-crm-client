@@ -1,9 +1,7 @@
 import type { ReactNode } from 'react'
-
-import { classNames } from '@/shared'
-
 import { Icon } from '../icon'
 import cl from './PercentCircle.module.scss'
+import { classNames } from '@/shared'
 
 export const PercentCircle = ({
     percent,

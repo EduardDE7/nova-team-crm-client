@@ -1,10 +1,7 @@
 import cookie from 'js-cookie'
-
 import { type ReactNode, useEffect } from 'react'
-
-import { changeThemeAction, useAppDispatch, useAppSelector } from '@/shared'
-
 import { getThemeFromCookie } from './utils'
+import { changeThemeAction, useAppDispatch, useAppSelector } from '@/shared'
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const { theme } = useAppSelector(store => store.theme)

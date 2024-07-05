@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { PercentCircle } from './PercentCircle'
 // eslint-disable-next-line import/order
 import AvatarExample from './percent-circle-example.png'
