@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "vite --port 3000",
         "build": "tsc && vite build",
+        "autofix": "npm run prettier:fix && npm run lint",
         "lint": "eslint . --fix",
         "preview": "vite preview",
         "prettier:fix": "prettier --write \"**/*.{jsx,tsx}\"",
