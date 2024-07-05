@@ -1,11 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-
-import { Button } from '@/shared'
-import { Typography } from '@/shared'
-
-// eslint-disable-next-line import/no-internal-modules
 import NotFoundImage from '../../shared/assets/images/404.svg'
 import cl from './PageNotFound.module.scss'
+import { Button, Typography } from '@/shared'
 
 const { Text } = Typography
 
