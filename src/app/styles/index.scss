@@ -1,8 +1,9 @@
 @import './reset';
 @import './fonts';
-@import './variables';
+@import './colorTheme';
+@import './textmixins';
 
 body {
-	font-family: 'Nunito Sans', sans-serif;
-	background: var(--bg-color);
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--background);
 }

@@ -7,3 +7,59 @@
     font-family: Montserrat;
     src: url('../../../fonts/Montserrat.ttf');
 }
+
+@mixin heading-xxl {
+    font-weight: 700;
+    font-size: 34px;
+    font-family: Montserrat, sans-serif;
+    line-height: 44px;
+    letter-spacing: 0;
+}
+
+@mixin heading-xl {
+    font-weight: 700;
+    font-size: 22px;
+    font-family: Nunito, sans-serif;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+@mixin heading-l {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: Nunito, sans-serif;
+    line-height: 25px;
+    letter-spacing: 0;
+}
+
+@mixin text-m-bold {
+    font-weight: 700;
+    font-size: 16px;
+    font-family: Nunito, sans-serif;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+@mixin text-m-regular {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Nunito, sans-serif;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+@mixin text-s {
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Nunito, sans-serif;
+    line-height: 25px;
+    letter-spacing: 0;
+}
+
+@mixin text-l {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Nunito, sans-serif;
+    line-height: 19px;
+    letter-spacing: 0;
+}
