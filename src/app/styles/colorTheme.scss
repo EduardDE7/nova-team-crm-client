@@ -1,0 +1,87 @@
+// light-theme colors
+$magnolia: #f9f4fd;
+$white: #fff;
+$purple: #4b376e;
+$lavender: #d7ceff;
+$light-lilac: #e8d8f0;
+$dark-turquoise: #1fc6c6;
+$light-turquoise: #1ad3d3;
+$red: #f65160;
+$geraldine: #e78175;
+$blackcurrant: #1b0a29;
+$topaz: #877d92;
+
+// dark-theme colors
+$haiti: #241f2e;
+$martinique: #3a304b;
+$meteorite: #453365;
+$affair: #6e4c89;
+$aqua: #11fbfb;
+$amaranth: #f93042;
+$bittersweet: #ef6d5e;
+$white: #fff;
+$east-side: #a99cb5;
+
+@mixin checked-theme($selections-prop, $light-color, $dark-color) {
+    #{$selections-prop}: $light-color;
+    
+    [data-theme='dark'] & {
+        #{$selections-prop}: $dark-color;
+    }
+}
+
+@mixin background($selections-prop) {
+    @include checked-theme($selections-prop, $magnolia, $haiti);
+}
+
+@mixin surface($selections-prop) {
+    @include checked-theme($selections-prop, $white, $martinique);
+}
+
+@mixin primary($selections-prop) {
+    @include checked-theme($selections-prop, $purple, $meteorite);
+}
+
+@mixin primary-variant-1($selections-prop) {
+    @include checked-theme($selections-prop, $lavender, $affair);
+}
+
+@mixin primary-variant-2($selections-prop) {
+    @include checked-theme($selections-prop, $light-lilac, $affair);
+}
+
+@mixin secondary($selections-prop) {
+    @include checked-theme($selections-prop, $dark-turquoise, $aqua);
+}
+
+@mixin secondary-variant($selections-prop) {
+    @include checked-theme($selections-prop, $light-turquoise, $aqua);
+}
+
+@mixin error($selections-prop) {
+    @include checked-theme($selections-prop, $red, $amaranth);
+}
+
+@mixin progress($selections-prop) {
+    @include checked-theme($selections-prop, $geraldine, $bittersweet);
+}
+
+@mixin on-primary($selections-prop) {
+    @include checked-theme($selections-prop, $blackcurrant, $white);
+}
+
+@mixin on-secondary-variant-1($selections-prop) {
+    @include checked-theme($selections-prop, $white, $white);
+}
+
+@mixin on-secondary-variant-2($selections-prop) {
+    @include checked-theme($selections-prop, $blackcurrant, $white);
+}
+
+@mixin on-background($selections-prop) {
+    @include checked-theme($selections-prop, $blackcurrant, $white);
+}
+
+@mixin on-surface($selections-prop) {
+    @include checked-theme($selections-prop, $topaz, $east-side);
+}
