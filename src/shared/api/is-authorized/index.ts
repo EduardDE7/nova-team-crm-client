@@ -1,1 +1,4 @@
-export {useSetIsAuthorizedHandler, useIsAuthorizedValue} from './isAuthorized.ts'
+export {
+    useSetIsAuthorizedHandler,
+    useIsAuthorizedValue
+} from './isAuthorized.ts'

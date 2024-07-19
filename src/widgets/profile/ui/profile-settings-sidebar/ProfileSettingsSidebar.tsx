@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import { sidebarItems } from './profilesettingssidebar.data'
 import cl from './ProfileSettingsSidebar.module.scss'
 import { ProfileSettingsSidebarItem } from './ui'

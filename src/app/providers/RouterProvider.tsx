@@ -1,9 +1,7 @@
 import { FC } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-
 import { privateRoutes, publicRoutes } from '@/shared'
 import { useIsAuthorizedValue } from '@/shared/api/is-authorized'
-// eslint-disable-next-line import/no-internal-modules
 import { NOTFOUNDPAGE } from '@/shared/router/URL/index'
 
 type TRouteItem = {

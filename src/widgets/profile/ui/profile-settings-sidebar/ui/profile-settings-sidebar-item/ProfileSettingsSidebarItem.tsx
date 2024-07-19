@@ -1,6 +1,5 @@
-import { Icon, type IconName, Typography, classNames } from '@/shared'
-
 import cl from './ProfileSettingsSidebarItem.module.scss'
+import { Icon, type IconName, Typography, classNames } from '@/shared'
 
 const { Text } = Typography
 

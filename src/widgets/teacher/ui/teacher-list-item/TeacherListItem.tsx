@@ -1,7 +1,6 @@
-import { Button, Typography } from '@/shared'
-
 import type { TTeacherListItem } from '../../types'
 import cl from './index.module.scss'
+import { Button, Typography } from '@/shared'
 
 const { Text } = Typography
 

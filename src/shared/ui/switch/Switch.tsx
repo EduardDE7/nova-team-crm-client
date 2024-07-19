@@ -1,6 +1,5 @@
-import { Typography, classNames } from '@/shared'
-
 import cl from './Switch.module.scss'
+import { Typography, classNames } from '@/shared'
 
 const { Text } = Typography
 
@@ -13,7 +12,7 @@ export const Switch = ({
     variant: 'noBackground' | 'withBackground'
     options: [string, string]
     activeValue: string
-    setActiveValue: (v: string) => void // eslint-disable-line no-unused-vars
+    setActiveValue: (v: string) => void
 }) => {
     return (
         <div

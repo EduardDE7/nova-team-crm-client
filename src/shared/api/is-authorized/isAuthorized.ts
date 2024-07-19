@@ -21,7 +21,8 @@ const useIsAuthorizedStore = create<IsAuthorizedStore>()(
     )
 )
 
-export const useIsAuthorizedValue = (): IsAuthorizedStore['isAuthorized'] => useIsAuthorizedStore(state => state.isAuthorized)
+export const useIsAuthorizedValue = (): IsAuthorizedStore['isAuthorized'] =>
+    useIsAuthorizedStore(state => state.isAuthorized)
 
 export const useSetIsAuthorizedHandler = () => {
     const { setIsAuthorized } = useIsAuthorizedStore()

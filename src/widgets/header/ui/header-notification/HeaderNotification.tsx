@@ -1,10 +1,8 @@
 import { useEffect } from 'react'
-
-import { Button, Typography, classNames } from '@/shared'
-
 import { HeaderNotificationItem } from '../header-notification-item'
 import { headerNotificationItemsArr } from './header-notification.data'
 import cl from './index.module.scss'
+import { Button, Typography, classNames } from '@/shared'
 
 const { Title } = Typography
 
@@ -13,7 +11,7 @@ export const HeaderNotification = ({
     setIsOpen
 }: {
     isOpen: boolean
-    setIsOpen: (o: boolean) => void // eslint-disable-line no-unused-vars
+    setIsOpen: (o: boolean) => void
 }) => {
     useEffect(() => {
         if (isOpen) {

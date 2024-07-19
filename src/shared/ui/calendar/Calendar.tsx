@@ -1,11 +1,9 @@
 import { Dispatch, SetStateAction } from 'react'
 import { Calendar as ReactCalendar } from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-
-import { Icon } from '@/shared'
 import { LooseValue } from 'node_modules/react-calendar/dist/esm/shared/types'
-
 import cl from './Calendar.module.scss'
+import { Icon } from '@/shared'
 import './styles.css'
 
 export const Calendar = ({

@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-
-import { Icon } from '@/shared'
-
 import cl from './HeaderSearch.module.scss'
+import { Icon } from '@/shared'
 
 export const HeaderSearch = () => {
     const [inputValue, setInputValue] = useState<string>('')

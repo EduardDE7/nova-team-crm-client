@@ -1,8 +1,6 @@
 import { useState } from 'react'
-
-import { classNames } from '@/shared'
-
 import cl from './Toggle.module.scss'
+import { classNames } from '@/shared'
 
 export const Toggle = ({
     className,

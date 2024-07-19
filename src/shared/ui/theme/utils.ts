@@ -1,5 +1,4 @@
 import cookie from 'js-cookie'
-
 import { themesArr } from '@/shared'
 
 export const getThemeFromCookie = () => {

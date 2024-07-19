@@ -1,5 +1,3 @@
 export const AuthPage = () => {
-  return (
-    <div>AuthPage</div>
-  )
+    return <div>AuthPage</div>
 }

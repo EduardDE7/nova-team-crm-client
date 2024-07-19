@@ -1,8 +1,7 @@
-import { Typography } from '@/shared'
-
 import type { THeaderNotificationItem } from '../../types'
 import cl from './HeaderNotificationItem.module.scss'
 import userImage from './user-image.png'
+import { Typography } from '@/shared'
 
 const { Text, Title } = Typography
 export const HeaderNotificationItem = ({

@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { useState } from 'react'
-
-// eslint-disable-next-line
 import '@/app/styles/index.scss'
-
 import { Switch } from './Switch'
 
 const meta: Meta<typeof Switch> = {

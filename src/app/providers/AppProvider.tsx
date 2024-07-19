@@ -1,7 +1,6 @@
-import { ThemeProvider } from '@/shared'
-
 import { ReduxProvider } from './ReduxProvider'
 import { RouterProvider } from './RouterProvider'
+import { ThemeProvider } from '@/shared'
 
 export const AppProvider = () => {
     return (

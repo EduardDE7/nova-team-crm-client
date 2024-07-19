@@ -1,8 +1,6 @@
 import { useState } from 'react'
-
-import { Icon } from '@/shared'
-
 import cl from './Checkbox.module.scss'
+import { Icon } from '@/shared'
 
 export const Checkbox = ({ checked }: { checked: boolean }) => {
     const [isChecked, setIsChecked] = useState<boolean>(checked ?? false)

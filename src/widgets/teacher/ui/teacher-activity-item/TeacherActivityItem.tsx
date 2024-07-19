@@ -1,9 +1,7 @@
-import React from 'react'
-
-import { PercentCircle, Typography } from '@/shared'
-
+import { memo } from 'react'
 import TeacherImage from './teacher-image.png'
 import cl from './TeacherActivityItem.module.scss'
+import { PercentCircle, Typography } from '@/shared'
 
 const { Text } = Typography
 
@@ -65,7 +63,7 @@ export const TeacherActivityItem = ({
     )
 }
 
-const TeacherInfoItem = React.memo(
+const TeacherInfoItem = memo(
     ({ count, text }: { count: number; text: string }) => {
         return (
             <div className={cl.root__teacher_courses_info}>

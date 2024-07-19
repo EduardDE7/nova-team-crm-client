@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-import { Icon, Typography } from '@/shared'
-
 import cl from './Dropdown.module.scss'
 import { DropdownOption } from './types'
+import { Icon, Typography } from '@/shared'
 
 const { Text } = Typography
 
@@ -14,7 +12,6 @@ export const Dropdown = ({
     options
 }: {
     activeValue?: DropdownOption
-    // eslint-disable-next-line no-unused-vars
     setActiveValue?: (value: DropdownOption) => void
     options: DropdownOption[]
 }) => {

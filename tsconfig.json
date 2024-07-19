@@ -27,6 +27,8 @@
         "src/*"
       ]
     },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   },
   "include": [
     "src"
