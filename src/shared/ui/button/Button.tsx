@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Typography } from '../typography'
 import cl from './Button.module.scss'
-import { Icon, IconName, classNames } from '@/shared'
+import { Icon, IconName, classNames, Typography } from '@/shared'
 
 export const Button = ({
     className,
