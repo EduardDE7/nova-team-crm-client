@@ -2,6 +2,9 @@ import { useTranslation } from 'react-i18next'
 import cl from './Text.module.scss'
 import { classNames } from '@/shared'
 
+/**
+ * @deprecated Use font mixins instead
+ */
 export const Text = ({
     className,
     text,
