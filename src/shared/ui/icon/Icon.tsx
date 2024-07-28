@@ -9,6 +9,10 @@ interface IconProps {
     style?: CSSProperties
     color?: string
 }
+
+/**
+ * @deprecated Use img tag instead
+ */
 export const Icon = ({ name, className, color }: IconProps) => {
     const Svg = getIcon(name)
 
