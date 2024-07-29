@@ -1,0 +1,80 @@
+@import '../../app/styles/index';
+
+.root {
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    padding: 65px 40px;
+
+    @include primary-variant-1('background-color');
+
+    &__logo {
+        width: calc(50vw - 40px);
+        height: auto;
+        padding: 88px 100px 58px 139px;
+        background-image: url('../../shared/assets/images/grid.svg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 24px 0 0 24px;
+
+        @include primary('background-color');
+
+        h1 {
+            margin-top: 51px;
+            padding-right: 155px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 40px;
+        }
+    }
+
+    &__auth {
+        width: calc(50vw - 40px);
+        height: auto;
+        padding: 168px 133px 225px;
+        border-radius: 0 24px 24px 0;
+
+        @include background('background-color');
+
+        h2 {
+            @include on-primary('color');
+            @include heading-xl;
+
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        &__input__icon {
+            cursor: pointer;
+
+            @include secondary('stroke')
+        }
+
+        &__subtitle {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            span {
+                @include text-m-regular;
+                @include on-surface('color');
+
+                &:last-child {
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &__button {
+            width: 100%;
+            margin: 30px 0 20px;
+        }
+
+        h5 {
+            text-align: center;
+
+            @include text-m-regular;
+            @include secondary('color');
+        }
+    }
+}

@@ -1,9 +1,11 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import Add from '@/shared/assets/icons/add.svg?react'
+import AddLink from '@/shared/assets/icons/addLink.svg'
 import Arrow from '@/shared/assets/icons/arrow.svg?react'
+import Attach from '@/shared/assets/icons/attach.svg'
 import Calendar from '@/shared/assets/icons/calendar.svg?react'
-import CalendarGray from '@/shared/assets/icons/calendarGray.svg?react'
+import CalendarActive from '@/shared/assets/icons/calendarActive.svg?react'
 import Chevron from '@/shared/assets/icons/chevron.svg?react'
 import Close from '@/shared/assets/icons/close.svg?react'
 import Computer from '@/shared/assets/icons/computer.svg?react'
@@ -13,7 +15,7 @@ import Courses from '@/shared/assets/icons/projects.svg?react'
 import DarkMode from '@/shared/assets/icons/dark-mode.svg?react'
 import Dashboard from '@/shared/assets/icons/dashboard.svg?react'
 import Done from '@/shared/assets/icons/done.svg?react'
-import Edit from '@/shared/assets/icons/edit.svg?react'
+import Filter from '@/shared/assets/icons/filter.svg?react'
 import Eye from '@/shared/assets/icons/eye.svg?react'
 import InfoPortal from '@/shared/assets/icons/infoPortal.svg?react'
 import LightMode from '@/shared/assets/icons/light-mode.svg?react'
@@ -25,13 +27,14 @@ import Payments from '@/shared/assets/icons/payments.svg?react'
 import Safety from '@/shared/assets/icons/safety.svg?react'
 import Search from '@/shared/assets/icons/search.svg?react'
 import Settings from '@/shared/assets/icons/settings.svg?react'
-import Teachers from '@/shared/assets/icons/employees.svg?react'
+import Employees from '@/shared/assets/icons/employees.svg?react'
+import Upload from '@/shared/assets/icons/upload.svg'
 
 export const icons = {
     Settings,
     Notification,
     Add,
-    Edit,
+    Filter,
     Chevron,
     Search,
     Done,
@@ -39,10 +42,10 @@ export const icons = {
     Course,
     Computer,
     Calendar,
-    CalendarGray,
+    CalendarActive,
     Dashboard,
     Courses,
-    Teachers,
+    Employees,
     Messenger,
     InfoPortal,
     Logout,
@@ -53,7 +56,10 @@ export const icons = {
     Close,
     DarkMode,
     LightMode,
-    Eye
+    Eye,
+    Attach,
+    Upload,
+    AddLink
 }
 
 export type IconName = keyof typeof icons
