@@ -1,6 +1,9 @@
 @import './reset';
 @import './fonts';
 @import './colorTheme';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
     font-family: 'Nunito Sans', sans-serif;
