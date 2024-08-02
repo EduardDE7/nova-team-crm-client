@@ -1,71 +1,53 @@
-export type TSidebarItem = {
+import dashboard from '@/shared/assets/icons/dashboard.svg'
+import projects from '@/shared/assets/icons/projects.svg'
+import calendar from '@/shared/assets/icons/calendar.svg'
+import members from '@/shared/assets/icons/employees.svg'
+import messenger from '@/shared/assets/icons/messenger.svg'
+import infoportal from '@/shared/assets/icons/infoPortal.svg'
+import {
+    CALENDARPAGE,
+    DASHBOARDPAGE,
+    INFOPORTALPAGE,
+    MEMBERSPAGE,
+    MESSANGERPAGE,
+    PROJECTSPAGE
+} from '@/shared/router/URL'
+
+export type SidebarItem = {
     title: string
     icon: string
     route: string
 }
 
-export const registeredUsers: TSidebarItem[] = [
+export const sidebarItems: SidebarItem[] = [
     {
         title: 'Dashboard',
-        icon: 'src/shared/assets/icons/dashboard.svg',
-        route: '#'
+        icon: dashboard,
+        route: DASHBOARDPAGE
     },
     {
-        title: 'Courses',
-        icon: 'src/shared/assets/icons/courses.svg',
-        route: '#'
+        title: 'Projects',
+        icon: projects,
+        route: PROJECTSPAGE
     },
     {
         title: 'Calendar',
-        icon: 'src/shared/assets/icons/calendar.svg',
-        route: '#'
+        icon: calendar,
+        route: CALENDARPAGE
     },
     {
         title: 'Members',
-        icon: 'src/shared/assets/icons/members.svg',
-        route: '#'
+        icon: members,
+        route: MEMBERSPAGE
     },
     {
         title: 'Messenger',
-        icon: 'src/shared/assets/icons/messenger.svg',
-        route: '#'
+        icon: messenger,
+        route: MESSANGERPAGE
     },
     {
         title: 'Info Portal',
-        icon: 'src/shared/assets/icons/infoportal.svg',
-        route: '#'
-    }
-]
-
-export const unRegisteredUsers: TSidebarItem[] = [
-    {
-        title: 'Dashboard',
-        icon: 'src/shared/assets/icons/dashboard.svg',
-        route: '#'
-    },
-    {
-        title: 'Courses',
-        icon: 'src/shared/assets/icons/courses.svg',
-        route: '#'
-    },
-    {
-        title: 'Calendar',
-        icon: 'src/shared/assets/icons/calendar.svg',
-        route: '#'
-    },
-    {
-        title: 'Members',
-        icon: 'src/shared/assets/icons/members.svg',
-        route: '#'
-    },
-    {
-        title: 'Messenger',
-        icon: 'src/shared/assets/icons/messenger.svg',
-        route: '#'
-    },
-    {
-        title: 'Info Portal',
-        icon: 'src/shared/assets/icons/infoportal.svg',
-        route: '#'
+        icon: infoportal,
+        route: INFOPORTALPAGE
     }
 ]

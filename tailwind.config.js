@@ -22,7 +22,8 @@ module.exports = {
                 amaranth: '#f93042',
                 bittersweet: '#ef6d5e',
                 white: '#fff',
-                'east-side': '#a99cb5'
+                'east-side': '#a99cb5',
+                gainsboro: '#d9d9d9'
             }
         }
     },

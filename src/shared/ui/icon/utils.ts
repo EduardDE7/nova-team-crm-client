@@ -9,7 +9,7 @@ import Close from '@/shared/assets/icons/close.svg?react'
 import Computer from '@/shared/assets/icons/computer.svg?react'
 import Connected from '@/shared/assets/icons/connected-apps.svg?react'
 import Course from '@/shared/assets/icons/course-icon.svg?react'
-import Courses from '@/shared/assets/icons/courses.svg?react'
+import Courses from '@/shared/assets/icons/projects.svg?react'
 import DarkMode from '@/shared/assets/icons/dark-mode.svg?react'
 import Dashboard from '@/shared/assets/icons/dashboard.svg?react'
 import Done from '@/shared/assets/icons/done.svg?react'
@@ -25,7 +25,7 @@ import Payments from '@/shared/assets/icons/payments.svg?react'
 import Safety from '@/shared/assets/icons/safety.svg?react'
 import Search from '@/shared/assets/icons/search.svg?react'
 import Settings from '@/shared/assets/icons/settings.svg?react'
-import Teachers from '@/shared/assets/icons/members.svg'
+import Teachers from '@/shared/assets/icons/employees.svg?react'
 
 export const icons = {
     Settings,

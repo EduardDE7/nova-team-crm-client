@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { TSidebarItem } from './sidebar.data'
+import { type SidebarItem } from './sidebar.data'
 import mainLogo from '@/shared/assets/images/mainLogo.png'
 import LogoutIcon from '@/shared/assets/icons/logout.svg'
 
@@ -17,12 +17,12 @@ function SidebarItem({
             to={route}
             className={'flex items-center gap-x-[15px]'}>
             <img src={icon} />
-            <h4 className={'text-base text-[#d9d9d9]'}>{title}</h4>
+            <h4 className={'text-base text-gainsboro'}>{title}</h4>
         </Link>
     )
 }
 
-export const Sidebar = ({ sidebarItems }: { sidebarItems: TSidebarItem[] }) => {
+export const Sidebar = ({ sidebarItems }: { sidebarItems: SidebarItem[] }) => {
     return (
         <div
             className={
@@ -35,7 +35,7 @@ export const Sidebar = ({ sidebarItems }: { sidebarItems: TSidebarItem[] }) => {
                         alt="Main logo"
                     />
                 </Link>
-                <div className={'flex flex-col justify-center gap-y-[30px]'}>
+                <div className={'flex flex-col justify-center gap-7'}>
                     {sidebarItems.map(item => (
                         <SidebarItem
                             key={item.title}
@@ -46,9 +46,9 @@ export const Sidebar = ({ sidebarItems }: { sidebarItems: TSidebarItem[] }) => {
                     ))}
                 </div>
             </div>
-            <div className="flex items-center gap-x-[15px]">
+            <div className="flex cursor-pointer items-center gap-x-[15px]">
                 <img src={LogoutIcon} />
-                <span style={{ color: 'white' }}>Logout</span>
+                <span className="text-white">Logout</span>
             </div>
         </div>
     )
