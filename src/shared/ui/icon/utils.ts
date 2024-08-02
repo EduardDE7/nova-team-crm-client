@@ -25,7 +25,7 @@ import Payments from '@/shared/assets/icons/payments.svg?react'
 import Safety from '@/shared/assets/icons/safety.svg?react'
 import Search from '@/shared/assets/icons/search.svg?react'
 import Settings from '@/shared/assets/icons/settings.svg?react'
-import Teachers from '@/shared/assets/icons/teachers.svg?react'
+import Teachers from '@/shared/assets/icons/members.svg'
 
 export const icons = {
     Settings,
