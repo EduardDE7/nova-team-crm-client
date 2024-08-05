@@ -26,7 +26,7 @@ export const Sidebar = ({ sidebarItems }: { sidebarItems: SidebarItem[] }) => {
     return (
         <div
             className={
-                'bg-purple h-[calc(100vh-40px)] rounded-3xl pt-[50px] w-fit flex-col flex justify-between px-10 pb-11'
+                'bg-purple h-screen rounded-3xl pt-[50px] w-fit flex-col flex justify-between px-10 pb-11'
             }>
             <div className={'flex flex-col gap-y-[53px]'}>
                 <Link to={'/'}>
