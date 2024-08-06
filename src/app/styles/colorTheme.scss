@@ -22,9 +22,16 @@ $bittersweet: #ef6d5e;
 $white: #fff;
 $east-side: #a99cb5;
 
+// single colors
+$gainsboro: #d9d9d9;
+$light-gray: #b3b3b3;
+$turquoise: #23dcdc;
+$white: #fff;
+$dark-purple: #302b55;
+
 @mixin checked-theme($selections-prop, $light-color, $dark-color) {
     #{$selections-prop}: $light-color;
-    
+
     [data-theme='dark'] & {
         #{$selections-prop}: $dark-color;
     }
@@ -84,4 +91,8 @@ $east-side: #a99cb5;
 
 @mixin on-surface($selections-prop) {
     @include checked-theme($selections-prop, $topaz, $east-side);
+}
+
+@mixin gainsboro($selections-prop) {
+    @include checked-theme($selections-prop, $gainsboro, $gainsboro);
 }

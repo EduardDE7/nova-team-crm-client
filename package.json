@@ -17,6 +17,8 @@
     "dependencies": {
         "@reduxjs/toolkit": "^2.2.1",
         "autoprefixer": "^10.4.19",
+        "@tanstack/react-form": "^0.26.4",
+        "@tanstack/zod-form-adapter": "^0.26.4",
         "i18next": "^23.8.2",
         "js-cookie": "^3.0.5",
         "postcss-cli": "^11.0.0",
