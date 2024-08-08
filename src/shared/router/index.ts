@@ -1,11 +1,10 @@
-import { AuthPage, LoginPage } from '@/pages'
+import { AuthPage, LoginPage, PageNotFound } from '@/pages'
 import { CalendarPage } from '@/pages/CalendarPage'
 import { DashboardPage } from '@/pages/Dashboard'
 import { HomePage } from '@/pages/Home'
 import { InfoPortalsPage } from '@/pages/InfoPortalsPage'
 import { MembersPage } from '@/pages/MembersPage'
-import { MessangerPage } from '@/pages/MessangerPage'
-import { PageNotFound } from '@/pages/PageNotFound'
+import { MessengerPage } from '@/pages/MessengerPage'
 import { ProjectsPage } from '@/pages/ProjectsPage'
 import {
     AUTHPAGE,
@@ -15,7 +14,7 @@ import {
     INFOPORTALPAGE,
     LOGINPAGE,
     MEMBERSPAGE,
-    MESSANGERPAGE,
+    MESSENGERPAGE,
     NOTFOUNDPAGE,
     PROJECTSPAGE
 } from '@/shared/router/URL/index'
@@ -57,8 +56,8 @@ export const privateRoutes = [
         path: MEMBERSPAGE
     },
     {
-        Page: MessangerPage,
-        path: MESSANGERPAGE
+        Page: MessengerPage,
+        path: MESSENGERPAGE
     },
     {
         Page: InfoPortalsPage,

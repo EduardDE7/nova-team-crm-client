@@ -1,15 +1,10 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import cl from './AuthPage.module.scss'
-// eslint-disable-next-line import/no-unresolved
 import Logo from '@/shared/assets/images/logo.svg'
-// eslint-disable-next-line import/no-unresolved
 import Figures from '@/shared/assets/images/figures.svg'
-// eslint-disable-next-line import/no-unresolved
 import { Button, Checkbox, Input } from '@/shared'
-// eslint-disable-next-line import/no-unresolved
 import Eye from '@/shared/assets/icons/eye.svg?react'
-// eslint-disable-next-line import/no-unresolved
 import Hide from '@/shared/assets/icons/hide.svg?react'
 
 export const AuthPage = () => {
