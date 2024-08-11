@@ -55,6 +55,10 @@
             @include on-surface('color');
             @include text-m-regular;
         }
+
+        &:-webkit-autofill {
+            box-shadow: 0 0 0 1000px #fff inset;
+        }
     }
 
     &__error {
