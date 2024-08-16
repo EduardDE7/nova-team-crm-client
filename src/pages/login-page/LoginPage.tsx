@@ -1,15 +1,11 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import cl from './LoginPage.module.scss'
-// eslint-disable-next-line import/no-unresolved
 import Logo from '@/shared/assets/images/logo.svg'
-// eslint-disable-next-line import/no-unresolved
 import Figures from '@/shared/assets/images/figures.svg'
-// eslint-disable-next-line import/no-unresolved
 import { Button, Checkbox, Input } from '@/shared'
-// eslint-disable-next-line import/no-unresolved
 import Eye from '@/shared/assets/icons/eye.svg?react'
-// eslint-disable-next-line import/no-unresolved
 import Hide from '@/shared/assets/icons/hide.svg?react'
 
 export const LoginPage = () => {
@@ -106,7 +102,7 @@ export const LoginPage = () => {
                         text="Sign In"
                         variant="secondary"
                     />
-                    <h5>I don’t have an account</h5>
+                    <Link to={'/auth'}>I don’t have an account</Link>
                 </form>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import cl from './AuthPage.module.scss'
 import Logo from '@/shared/assets/images/logo.svg'
 import Figures from '@/shared/assets/images/figures.svg'
@@ -32,9 +33,8 @@ export const AuthPage = () => {
                 })
                 const userData = await response.json()
 
-                if (userData.message === 'This email already exist') {
+                if (userData.message) {
                     throw new Error('This email already exist')
-                    return
                 }
 
                 localStorage.setItem('accessToken', userData.accessToken)
@@ -67,7 +67,7 @@ export const AuthPage = () => {
                     onSubmit={e => {
                         e.preventDefault()
                         e.stopPropagation()
-                        form.handleSubmit()
+                        void form.handleSubmit()
                     }}>
                     <form.Field
                         name="email"
@@ -122,7 +122,7 @@ export const AuthPage = () => {
                         text="Sign Up"
                         variant="secondary"
                     />
-                    <h5>Already have an account? Sign In</h5>
+                    <Link to={'/login'}>Already have an account? Sign In</Link>
                 </form>
             </div>
         </div>
