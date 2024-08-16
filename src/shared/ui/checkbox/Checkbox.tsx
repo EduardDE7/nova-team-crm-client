@@ -1,26 +1,28 @@
 import { useState } from 'react'
 import cl from './Checkbox.module.scss'
-import { Icon } from '@/shared'
+import Done from '@/shared/assets/icons/done.svg?react'
 
-export const Checkbox = ({ checked }: { checked: boolean }) => {
-    const [isChecked, setIsChecked] = useState<boolean>(checked ?? false)
+interface CheckboxProps
+    extends Omit<React.ComponentProps<'input'>, 'type' | 'value' | 'children'> {
+    onChangeCallback: (isChecked: boolean) => void
+}
 
-    const addCheck = () => setIsChecked(!isChecked)
+export const Checkbox = ({ checked, onChangeCallback }: CheckboxProps) => {
+    const [isChecked, setIsChecked] = useState(checked ?? false)
+    const handleChange = () => {
+        const newStateChecked = !isChecked
+        setIsChecked(newStateChecked)
+        onChangeCallback(newStateChecked)
+    }
 
     return (
-        <div className={cl.root}>
-            <div
-                className={cl.root__checkbox}
-                onClick={addCheck}>
-                {isChecked ? (
-                    <Icon
-                        name="Done"
-                        className={cl.root__icon}
-                    />
-                ) : (
-                    ''
-                )}
-            </div>
-        </div>
+        <label className={cl.root}>
+            <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleChange}
+            />
+            {isChecked ? <Done /> : ''}
+        </label>
     )
 }

@@ -1,18 +1,16 @@
+@import '@/app/styles/index';
+
 .root {
-    padding: 2px;
+    display: flex;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border: 2px solid;
+    border-radius: 4px;
 
-    &__checkbox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        border: #1b0a29 solid 2px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+    @include secondary('border-color');
 
-    &__icon {
-        padding-bottom: 3px;
-    }
+    input{
+    display: none;
+}
 }
