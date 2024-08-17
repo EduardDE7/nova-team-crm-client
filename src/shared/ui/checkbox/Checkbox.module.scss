@@ -7,10 +7,11 @@
     height: 18px;
     border: 2px solid;
     border-radius: 4px;
+    cursor: pointer;
 
     @include secondary('border-color');
 
-    input{
-    display: none;
-}
+    input {
+        display: none;
+    }
 }
