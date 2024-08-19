@@ -5,13 +5,23 @@
     align-items: center;
     width: 18px;
     height: 18px;
+    padding: 1px;
     border: 2px solid;
     border-radius: 4px;
     cursor: pointer;
+    appearance: none;
+    appearance: none;
+    appearance: none;
 
     @include secondary('border-color');
 
-    input {
-        display: none;
+    &:checked::before {
+        width: 14px;
+        height: 14px;
+        content: '';
+        mask-image: url("../../assets/icons/done.svg?react");
+        mask-size: cover;
+
+        @include secondary('background-color');
     }
 }
