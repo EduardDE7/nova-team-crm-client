@@ -10,8 +10,6 @@
     border-radius: 4px;
     cursor: pointer;
     appearance: none;
-    appearance: none;
-    appearance: none;
 
     @include secondary('border-color');
 
@@ -19,7 +17,7 @@
         width: 14px;
         height: 14px;
         content: '';
-        mask-image: url("../../assets/icons/done.svg?react");
+        mask-image: url('../../assets/icons/done.svg?react');
         mask-size: cover;
 
         @include secondary('background-color');
