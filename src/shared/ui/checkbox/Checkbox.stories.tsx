@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react'
+import { useArgs } from '@storybook/preview-api'
 import { Checkbox } from './Checkbox'
 
 const meta = {
@@ -15,18 +16,27 @@ const meta = {
         }
     }
 } satisfies Meta<typeof Checkbox>
-
 export default meta
+
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
     args: {
-        checked: false
-    }
-}
-
-export const Checked: Story = {
-    args: {
         checked: true
+    },
+    render: function Render(arg) {
+        const [{ checked }, updateArgs] = useArgs()
+
+        function onChange() {
+            updateArgs({ checked: !checked })
+        }
+
+        return (
+            <Checkbox
+                {...arg}
+                checked={checked}
+                onChange={onChange}
+            />
+        )
     }
 }

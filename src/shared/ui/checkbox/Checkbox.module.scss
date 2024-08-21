@@ -1,25 +1,25 @@
-@import '../../../app/styles/index';
+@import '@/app/styles/index';
 
 .root {
-    padding: 2px;
+    display: flex;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    padding: 1px;
+    border: 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
 
-    &__checkbox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        border: solid 2px;
+    @include secondary('border-color');
 
-        @include secondary('color');
+    &:checked::before {
+        width: 14px;
+        height: 14px;
+        content: '';
+        mask-image: url('../../assets/icons/done.svg?react');
+        mask-size: cover;
 
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    &__icon {
-        margin-bottom: 3px;
-
-        @include secondary('fill');
+        @include secondary('background-color');
     }
 }
