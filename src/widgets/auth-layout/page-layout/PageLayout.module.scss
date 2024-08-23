@@ -29,7 +29,7 @@
     }
 
     .auth {
-        width: calc(50vw - 40px);
+        width: 50vw;
         height: auto;
         padding: 168px 133px 225px;
         border-radius: 0 24px 24px 0;
@@ -42,41 +42,6 @@
 
             margin-bottom: 35px;
             text-align: center;
-        }
-
-        .hide {
-            cursor: pointer;
-            stroke: $gainsboro;
-        }
-
-        .eye {
-            cursor: pointer;
-
-            @include secondary('stroke');
-        }
-
-        .subtitle {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-
-            span {
-                @include text-m-regular;
-                @include on-surface('color');
-            }
-        }
-
-        .button {
-            width: 100%;
-            margin: 30px 0 20px;
-        }
-
-        a {
-            display: block;
-            text-align: center;
-
-            @include text-m-regular;
-            @include secondary('color');
         }
     }
 }
