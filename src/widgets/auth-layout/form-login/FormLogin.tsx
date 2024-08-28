@@ -1,7 +1,7 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import cl from './FormLogin.module.scss'
+import cl from '../form-auth/FormAuth.module.scss'
 import { Button, Checkbox, Input } from '@/shared'
 import Eye from '@/shared/assets/icons/eye.svg?react'
 import Hide from '@/shared/assets/icons/hide.svg?react'
@@ -99,7 +99,7 @@ export const FormLogin = () => {
                     }}
                 />
                 <span>Remember me</span>
-                <span>Forgot password?</span>
+                <span className="ml-auto cursor-pointer">Forgot password?</span>
             </div>
             <Button
                 className={cl.button}

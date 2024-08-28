@@ -24,7 +24,7 @@ export const PageLayout = ({ title, children }: PageLayoutProps) => {
             </div>
             <div className={cl.auth}>
                 <h2>{title}</h2>
-                <div>{children}</div>
+                {children}
             </div>
         </div>
     )

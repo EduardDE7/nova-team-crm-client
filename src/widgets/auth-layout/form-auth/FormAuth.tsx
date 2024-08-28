@@ -10,6 +10,7 @@ import { useSetIsAuthorizedHandler } from '@/shared/api/is-authorized'
 export const FormAuth = () => {
     const [isVisible, setIsVisible] = useState(false)
     const [isChecked, setIsChecked] = useState(true)
+    const [inputError, setInputError] = useState<string[]>([])
     const URL = `${import.meta.env.VITE_API_URL}/auth/register`
     const setIsAuthorized = useSetIsAuthorizedHandler()
 
@@ -32,8 +33,9 @@ export const FormAuth = () => {
                 })
                 const userData = await response.json()
 
-                if (userData.message) {
-                    throw new Error('This email already exist')
+                if (userData?.message?.length) {
+                    setInputError(userData.message)
+                    return
                 }
 
                 localStorage.setItem('accessToken', userData.accessToken)
@@ -61,7 +63,13 @@ export const FormAuth = () => {
                         placeholder="Email address"
                         name={field.name}
                         value={field.state.value}
-                        onChange={e => field.handleChange(e.target.value)}
+                        onChange={e => {
+                            field.handleChange(e.target.value)
+                            setInputError([])
+                        }}
+                        error={inputError.find(error =>
+                            error.includes('email')
+                        )}
                     />
                 )}
             />
@@ -73,7 +81,13 @@ export const FormAuth = () => {
                         placeholder="Password"
                         name={field.name}
                         value={field.state.value}
-                        onChange={e => field.handleChange(e.target.value)}
+                        onChange={e => {
+                            field.handleChange(e.target.value)
+                            setInputError([])
+                        }}
+                        error={inputError.find(error =>
+                            error.includes('password')
+                        )}
                         rightIcon={
                             isVisible ? (
                                 <Hide
@@ -90,7 +104,7 @@ export const FormAuth = () => {
                     />
                 )}
             />
-            <div className={cl.subtitle}>
+            <label className={cl.subtitle}>
                 <Checkbox
                     checked={isChecked}
                     onChange={() => {
@@ -99,7 +113,7 @@ export const FormAuth = () => {
                     }}
                 />
                 <span>Remember me</span>
-            </div>
+            </label>
             <Button
                 className={cl.button}
                 text="Sing Up"
@@ -108,7 +122,7 @@ export const FormAuth = () => {
             <Link
                 className={cl.link}
                 to={'/login'}>
-                "Already have an account ? Sign In"
+                {'Already have an account ? Sign In'}
             </Link>
         </form>
     )
