@@ -5,14 +5,20 @@ import cl from './FormAuth.module.scss'
 import { Button, Checkbox, Input } from '@/shared'
 import Eye from '@/shared/assets/icons/eye.svg?react'
 import Hide from '@/shared/assets/icons/hide.svg?react'
-import { useSetIsAuthorizedHandler } from '@/shared/api/is-authorized'
 
-export const FormAuth = () => {
+interface FormAuthProps {
+    span?: string
+    redirect: string
+}
+
+export const FormAuth = ({ span, redirect }: FormAuthProps) => {
     const [isVisible, setIsVisible] = useState(false)
     const [isChecked, setIsChecked] = useState(true)
-    const [inputError, setInputError] = useState<string[]>([])
+    const [inputError, setInputError] = useState<{
+        email?: string
+        password?: string
+    }>({})
     const URL = `${import.meta.env.VITE_API_URL}/auth/register`
-    const setIsAuthorized = useSetIsAuthorizedHandler()
 
     const form = useForm({
         defaultValues: {
@@ -33,15 +39,17 @@ export const FormAuth = () => {
                 })
                 const userData = await response.json()
 
-                if (userData?.message?.length) {
+                if (userData?.message) {
                     setInputError(userData.message)
                     return
                 }
 
-                localStorage.setItem('accessToken', userData.accessToken)
-                localStorage.setItem('refreshToken', userData.refreshToken)
-                setIsAuthorized(true)
-                form.reset()
+                if (userData?.accessToken && userData?.refreshToken) {
+                    localStorage.setItem('accessToken', userData.accessToken)
+                    localStorage.setItem('refreshToken', userData.refreshToken)
+                    // change isAuthorized
+                    form.reset()
+                }
             } catch (err) {
                 // eslint-disable-next-line no-console
                 console.log(err)
@@ -65,14 +73,13 @@ export const FormAuth = () => {
                         value={field.state.value}
                         onChange={e => {
                             field.handleChange(e.target.value)
-                            setInputError([])
+                            setInputError(prev => ({ ...prev, email: '' }))
                         }}
-                        error={inputError.find(error =>
-                            error.includes('email')
-                        )}
+                        error={inputError.email}
                     />
                 )}
             />
+
             <form.Field
                 name="password"
                 children={field => (
@@ -83,11 +90,9 @@ export const FormAuth = () => {
                         value={field.state.value}
                         onChange={e => {
                             field.handleChange(e.target.value)
-                            setInputError([])
+                            setInputError(prev => ({ ...prev, password: '' }))
                         }}
-                        error={inputError.find(error =>
-                            error.includes('password')
-                        )}
+                        error={inputError.password}
                         rightIcon={
                             isVisible ? (
                                 <Hide
@@ -109,10 +114,11 @@ export const FormAuth = () => {
                     checked={isChecked}
                     onChange={() => {
                         setIsChecked(!isChecked)
-                        // логика работы с JWT
+                        //'Remember me' logic
                     }}
                 />
                 <span>Remember me</span>
+                <span className="ml-auto cursor-pointer">{span}</span>
             </label>
             <Button
                 className={cl.button}
@@ -121,7 +127,7 @@ export const FormAuth = () => {
             />
             <Link
                 className={cl.link}
-                to={'/login'}>
+                to={redirect}>
                 {'Already have an account ? Sign In'}
             </Link>
         </form>
