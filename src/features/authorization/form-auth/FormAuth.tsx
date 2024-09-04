@@ -1,17 +1,11 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { onSubmitForm } from '../form-logic/onSubmitForm'
 import cl from './FormAuth.module.scss'
 import { Button, Checkbox, Input } from '@/shared'
-import Eye from '@/shared/assets/icons/eye.svg?react'
-import Hide from '@/shared/assets/icons/hide.svg?react'
 
-interface FormAuthProps {
-    span?: string
-    redirect: string
-}
-
-export const FormAuth = ({ span, redirect }: FormAuthProps) => {
+export const FormAuth = () => {
     const [isVisible, setIsVisible] = useState(false)
     const [isChecked, setIsChecked] = useState(true)
     const [inputError, setInputError] = useState<{
@@ -26,36 +20,48 @@ export const FormAuth = ({ span, redirect }: FormAuthProps) => {
             password: ''
         },
         onSubmit: async ({ value }) => {
-            try {
-                const response = await fetch(URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: value.email,
-                        password: value.password
-                    })
-                })
-                const userData = await response.json()
-
-                if (userData?.message) {
-                    setInputError(userData.message)
-                    return
-                }
-
-                if (userData?.accessToken && userData?.refreshToken) {
-                    localStorage.setItem('accessToken', userData.accessToken)
-                    localStorage.setItem('refreshToken', userData.refreshToken)
-                    // change isAuthorized
+            await onSubmitForm(
+                URL,
+                { email: value.email, password: value.password },
+                setInputError,
+                tokensObj => {
+                    localStorage.setItem('accessToken', tokensObj.accessToken)
+                    localStorage.setItem('refreshToken', tokensObj.refreshToken)
                     form.reset()
                 }
-            } catch (err) {
-                // eslint-disable-next-line no-console
-                console.log(err)
-            }
+            )
         }
     })
+    //     {
+    //         try {
+    //             const response = await fetch(URL, {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json'
+    //                 },
+    //                 body: JSON.stringify({
+    //                     email: value.email,
+    //                     password: value.password
+    //                 })
+    //             })
+    //             const userData = await response.json()
+
+    //             if (userData?.message) {
+    //                 setInputError(userData.message)
+    //                 return
+    //             }
+
+    //             if (userData?.accessToken && userData?.refreshToken) {
+    //                 localStorage.setItem('accessToken', userData.accessToken)
+    //                 localStorage.setItem('refreshToken', userData.refreshToken)
+    //                 form.reset()
+    //             }
+    //         } catch (err) {
+    //             // eslint-disable-next-line no-console
+    //             console.log(err)
+    //         }
+    //     }
+    // })
 
     return (
         <form
@@ -86,7 +92,6 @@ export const FormAuth = ({ span, redirect }: FormAuthProps) => {
                     <Input
                         type={!isVisible ? 'password' : 'text'}
                         placeholder="Password"
-                        name={field.name}
                         value={field.state.value}
                         onChange={e => {
                             field.handleChange(e.target.value)
@@ -94,17 +99,11 @@ export const FormAuth = ({ span, redirect }: FormAuthProps) => {
                         }}
                         error={inputError.password}
                         rightIcon={
-                            isVisible ? (
-                                <Hide
-                                    className={cl.hide}
-                                    onClick={() => setIsVisible(!isVisible)}
-                                />
-                            ) : (
-                                <Eye
-                                    className={cl.eye}
-                                    onClick={() => setIsVisible(!isVisible)}
-                                />
-                            )
+                            <span
+                                onClick={() => setIsVisible(prev => !prev)}
+                                className={
+                                    isVisible ? cl.text : cl.password
+                                }></span>
                         }
                     />
                 )}
@@ -113,12 +112,11 @@ export const FormAuth = ({ span, redirect }: FormAuthProps) => {
                 <Checkbox
                     checked={isChecked}
                     onChange={() => {
-                        setIsChecked(!isChecked)
+                        setIsChecked(prev => !prev)
                         //'Remember me' logic
                     }}
                 />
                 <span>Remember me</span>
-                <span className="ml-auto cursor-pointer">{span}</span>
             </label>
             <Button
                 className={cl.button}
@@ -127,7 +125,7 @@ export const FormAuth = ({ span, redirect }: FormAuthProps) => {
             />
             <Link
                 className={cl.link}
-                to={redirect}>
+                to={'/login'}>
                 {'Already have an account ? Sign In'}
             </Link>
         </form>

@@ -1,9 +1,10 @@
-import { FormAuth, PageLayout } from '@/widgets/auth-layout/index'
+import { FormAuth } from '@/features/authorization/form-auth/FormAuth'
+import { PageLayout } from '@/layout/page-layout/PageLayout'
 
 export const AuthPage = () => {
     return (
         <PageLayout title="Sign Up to Nova Learn">
-            <FormAuth redirect="/login" />
+            <FormAuth />
         </PageLayout>
     )
 }

@@ -14,6 +14,7 @@
 
         @include surface('background-color');
         @include primary-variant-2('border-color');
+        @include secondary('caret-color');
 
         &:hover {
             @include secondary('border-color');

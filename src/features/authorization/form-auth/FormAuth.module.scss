@@ -1,14 +1,20 @@
 @import '@/app/styles/index';
 
-.hide {
+.text {
+    width: 24px;
+    height: 24px;
+    background-color: $gainsboro;
     cursor: pointer;
-    stroke: $gainsboro;
+    mask-image: url("@/shared/assets/icons/hide.svg");
 }
 
-.eye {
+.password {
+    mask-image: url("@/shared/assets/icons/eye.svg");
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 
-    @include secondary('stroke');
+    @include secondary('background-color');
 }
 
 .subtitle {

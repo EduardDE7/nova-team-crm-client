@@ -1,5 +1,5 @@
 export { HomePage } from './Home'
 export { DashboardPage } from './Dashboard'
-export { LoginPage } from './login-page/index'
-export { AuthPage } from './auth-page/index'
+export { LoginPage } from './login-page/LoginPage'
+export { AuthPage } from './auth-page/AuthPage'
 export { PageNotFound } from './page-not-found/index'
