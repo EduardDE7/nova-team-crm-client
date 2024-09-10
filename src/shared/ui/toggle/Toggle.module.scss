@@ -1,26 +1,30 @@
+@import '@/app/styles/index';
+
 .root {
     display: flex;
     align-items: center;
     width: 51px;
     height: 31px;
-    background: #d9d9d9;
+    background-color: $;
     border-radius: 18px;
     cursor: pointer;
+    appearance: none;
 
-    &_active {
-        background: #23dcdc;
-    }
-
-    &__body {
+    &::before {
         width: 23px;
         height: 23px;
         background: #fff;
         border-radius: 50%;
         transform: translateX(5px);
         transition: all 0.2s linear;
+        content: '';
+    }
 
-        &_active {
-            transform: translateX(24px);
-        }
+    &:checked {
+        @include secondary('background-color');
+    }
+
+    &:checked::before {
+        transform: translateX(24px);
     }
 }
