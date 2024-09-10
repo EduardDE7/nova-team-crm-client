@@ -1,7 +1,12 @@
+interface FormField {
+    email: string
+    password: string
+}
+
 export const onSubmitForm = async (
     url: string,
-    formValues: { email?: string; password?: string },
-    errorCallback: (errorObj: { email?: string; password?: string }) => void,
+    formValues: FormField,
+    errorCallback: (errorObj: Partial<FormField>) => void,
     saveTokenCallback: (tokens: {
         accessToken: string
         refreshToken: string

@@ -19,10 +19,10 @@ export const FormAuth = () => {
             email: '',
             password: ''
         },
-        onSubmit: async ({ value }) => {
+        onSubmit: async ({ value: { email, password } }) => {
             await onSubmitForm(
                 URL,
-                { email: value.email, password: value.password },
+                { email, password },
                 setInputError,
                 tokensObj => {
                     localStorage.setItem('accessToken', tokensObj.accessToken)
@@ -32,36 +32,6 @@ export const FormAuth = () => {
             )
         }
     })
-    //     {
-    //         try {
-    //             const response = await fetch(URL, {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify({
-    //                     email: value.email,
-    //                     password: value.password
-    //                 })
-    //             })
-    //             const userData = await response.json()
-
-    //             if (userData?.message) {
-    //                 setInputError(userData.message)
-    //                 return
-    //             }
-
-    //             if (userData?.accessToken && userData?.refreshToken) {
-    //                 localStorage.setItem('accessToken', userData.accessToken)
-    //                 localStorage.setItem('refreshToken', userData.refreshToken)
-    //                 form.reset()
-    //             }
-    //         } catch (err) {
-    //             // eslint-disable-next-line no-console
-    //             console.log(err)
-    //         }
-    //     }
-    // })
 
     return (
         <form
