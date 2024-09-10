@@ -1,18 +1,25 @@
+@import '@/app/styles/index';
+
 .root {
-    padding: 2px;
+    display: flex;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    padding: 1px;
+    border: 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
 
-    &__checkbox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        border: #1b0a29 solid 2px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+    @include secondary('border-color');
 
-    &__icon {
-        padding-bottom: 3px;
+    &:checked::before {
+        width: 14px;
+        height: 14px;
+        content: '';
+        mask-image: url('../../assets/icons/done.svg?react');
+        mask-size: cover;
+
+        @include secondary('background-color');
     }
 }
