@@ -1,0 +1,10 @@
+.root {
+	display: flex;
+	margin-top: 32px;
+
+	&__divide {
+		width: 1px;
+		height: 148px;
+		background: rgb(232 216 240 / 100%);
+	}
+}

@@ -1,0 +1,2 @@
+export { ProfileCourse } from "./ProfileCourse";
+
