@@ -1,9 +1,17 @@
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { zodValidator } from '@tanstack/zod-form-adapter'
 import { onSubmitForm } from '../form-logic/onSubmitForm'
 import cl from './FormAuth.module.scss'
-import { Button, Checkbox, Input } from '@/shared'
+import {
+    AuthSchema,
+    Button,
+    Checkbox,
+    EmailSchema,
+    Input,
+    PasswordSchema
+} from '@/shared'
 
 export const FormAuth = () => {
     const [isVisible, setIsVisible] = useState(false)
@@ -30,6 +38,10 @@ export const FormAuth = () => {
                     form.reset()
                 }
             )
+        },
+        validatorAdapter: zodValidator(),
+        validators: {
+            onChange: AuthSchema()
         }
     })
 
@@ -42,22 +54,27 @@ export const FormAuth = () => {
             }}>
             <form.Field
                 name="email"
+                validators={{
+                    onChange: EmailSchema(),
+                    onChangeAsyncDebounceMs: 100
+                }}
                 children={field => (
                     <Input
                         placeholder="Email address"
                         name={field.name}
                         value={field.state.value}
-                        onChange={e => {
-                            field.handleChange(e.target.value)
-                            setInputError(prev => ({ ...prev, email: '' }))
-                        }}
-                        error={inputError.email}
+                        onChange={e => field.handleChange(e.target.value)}
+                        error={field.state.meta.errors[0] || inputError.email}
                     />
                 )}
             />
 
             <form.Field
                 name="password"
+                validators={{
+                    onChange: PasswordSchema(),
+                    onChangeAsyncDebounceMs: 100
+                }}
                 children={field => (
                     <Input
                         type={!isVisible ? 'password' : 'text'}
@@ -67,7 +84,10 @@ export const FormAuth = () => {
                             field.handleChange(e.target.value)
                             setInputError(prev => ({ ...prev, password: '' }))
                         }}
-                        error={inputError.password}
+                        error={
+                            // TODO: change displaying errors according to updated figma layout
+                            field.state.meta.errors[0] || inputError.password
+                        }
                         rightIcon={
                             <span
                                 onClick={() => setIsVisible(prev => !prev)}
