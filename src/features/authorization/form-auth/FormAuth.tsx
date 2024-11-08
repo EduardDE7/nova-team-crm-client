@@ -85,7 +85,6 @@ export const FormAuth = () => {
                             setInputError(prev => ({ ...prev, password: '' }))
                         }}
                         error={
-                            // TODO: change displaying errors according to updated figma layout
                             field.state.meta.errors[0] || inputError.password
                         }
                         rightIcon={

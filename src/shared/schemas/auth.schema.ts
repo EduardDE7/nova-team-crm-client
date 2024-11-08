@@ -9,21 +9,47 @@ export const EmailSchema = () => {
 export const PasswordSchema = () => {
     const { t } = useTranslation()
 
-    return z
-        .string()
-        .min(8, t('password must be at least 8 characters long'))
-        .refine(value => /[a-z]/.test(value), {
-            message: t('password must contain at least one lowercase letter')
-        })
-        .refine(value => /[A-Z]/.test(value), {
-            message: t('password must contain at least one uppercase letter')
-        })
-        .refine(value => /[0-9]/.test(value), {
-            message: t('password must contain at least one number')
-        })
-        .refine(value => /[^A-Za-z0-9]/.test(value), {
-            message: t('password must contain at least one special character')
-        })
+    return z.string().superRefine((value, ctx) => {
+        if (value.length < 8) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.too_small,
+                type: 'string',
+                minimum: 8,
+                inclusive: true,
+                message: t('password must be at least 8 characters long')
+            })
+        }
+        if (!/[a-z]/.test(value)) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: t(
+                    'password must contain at least one lowercase letter'
+                )
+            })
+        }
+        if (!/[A-Z]/.test(value)) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: t(
+                    'password must contain at least one uppercase letter'
+                )
+            })
+        }
+        if (!/[0-9]/.test(value)) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: t('password must contain at least one number')
+            })
+        }
+        if (!/[^A-Za-z0-9]/.test(value)) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: t(
+                    'password must contain at least one special character'
+                )
+            })
+        }
+    })
 }
 
 export const AuthSchema = () => {
