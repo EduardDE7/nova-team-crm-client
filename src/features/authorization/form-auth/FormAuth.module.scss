@@ -1,0 +1,43 @@
+@import '@/app/styles/index';
+
+.text,
+.password {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.text {
+    background-color: $gainsboro;
+    mask-image: url('@/shared/assets/icons/hide.svg');
+}
+
+.password {
+    mask-image: url('@/shared/assets/icons/eye.svg');
+
+    @include secondary('background-color');
+}
+
+.subtitle {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    span {
+        @include text-m-regular;
+        @include on-surface('color');
+    }
+}
+
+.button {
+    width: 100%;
+    margin: 30px 0 20px;
+}
+
+.link {
+    display: block;
+    text-align: center;
+
+    @include text-m-regular;
+    @include secondary('color');
+}

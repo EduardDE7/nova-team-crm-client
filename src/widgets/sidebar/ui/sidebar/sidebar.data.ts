@@ -9,7 +9,7 @@ import {
     DASHBOARDPAGE,
     INFOPORTALPAGE,
     MEMBERSPAGE,
-    MESSANGERPAGE,
+    MESSENGERPAGE,
     PROJECTSPAGE
 } from '@/shared/router/URL'
 
@@ -43,7 +43,7 @@ export const sidebarItems: SidebarItem[] = [
     {
         title: 'Messenger',
         icon: messenger,
-        route: MESSANGERPAGE
+        route: MESSENGERPAGE
     },
     {
         title: 'Info Portal',
